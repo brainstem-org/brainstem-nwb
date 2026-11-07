@@ -1,0 +1,9 @@
+# Configuration for the synthetic example. These values are not in a BrainSTEM export.
+[nwbfile]
+experimenter = ["Example, Experimenter"]
+lab = "Example Lab"
+institution = "Example University"
+
+[subject]
+label_field = "name"
+species_format = "binomial"

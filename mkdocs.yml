@@ -1,0 +1,23 @@
+site_name: brainstem-nwb
+site_description: Export BrainSTEM experimental metadata to NWB files
+repo_url: https://github.com/brainstem-org/brainstem-nwb
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Installation and authentication: install.md
+  - Command-line interface: cli.md
+  - Python API: python-api.md
+  - Mapping specification: mapping-spec.md
+  - Warning codes: warnings.md
+  - Conversion manifest: manifest.md
+  - Validation: validation.md
+  - Extensions and ontology terms: extensions.md
+  - Supported modalities: modalities.md
+  - Troubleshooting: troubleshooting.md
+  - Design:
+      - Architecture: design/architecture.md
+      - Decisions: design/decisions.md
+      - Raw-data conversion: design/phase4-raw-data.md
+      - ndx-brainstem extension: design/ndx-brainstem.md
+      - Schemas in the export (proposal): design/export-schemas.md

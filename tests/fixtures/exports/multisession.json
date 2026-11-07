@@ -1,0 +1,454 @@
+{
+ "export_info": {
+  "format_version": "2.1",
+  "exported_at": "2025-01-15T12:00:00.000000+00:00",
+  "project_id": "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54",
+  "project_ids": [
+   "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+  ],
+  "scope": "project",
+  "session_id": null,
+  "restricted": {},
+  "lab_resources": "Behavioral assays, data storages, setups, equipment, licenses, protocols, inventories and consumable stocks are included when the exporting user can read them and the project's records reference them.",
+  "record_count": 14,
+  "counts": {
+   "dissemination.journal": 0,
+   "dissemination.publication": 0,
+   "modules.behavior": 0,
+   "modules.consumablestock": 0,
+   "modules.dataacquisition": 0,
+   "modules.dataacquisitioninterface": 0,
+   "modules.episodepersonnel": 0,
+   "modules.equipment": 0,
+   "modules.experimentalinterface": 0,
+   "modules.manipulation": 0,
+   "modules.manipulationinterface": 0,
+   "modules.materialusage": 0,
+   "modules.materialusagetarget": 0,
+   "modules.moduleslogentry": 0,
+   "modules.procedure": 0,
+   "modules.procedureepisode": 0,
+   "modules.procedureinterface": 0,
+   "modules.procedurelog": 0,
+   "modules.procedurestage": 0,
+   "modules.procedurestagetarget": 0,
+   "modules.specimenlog": 0,
+   "modules.specimenprocedure": 0,
+   "modules.specimenproceduretarget": 0,
+   "modules.startendmoduleslogentry": 0,
+   "modules.subjectlog": 0,
+   "personal_attributes.behavioralassay": 0,
+   "personal_attributes.datastorage": 0,
+   "personal_attributes.inventory": 0,
+   "personal_attributes.license": 0,
+   "personal_attributes.protocol": 0,
+   "personal_attributes.protocolallowedsubtype": 0,
+   "personal_attributes.setup": 0,
+   "resources.consumable": 0,
+   "resources.hardwaredevice": 0,
+   "resources.supplier": 0,
+   "stem.breeding": 0,
+   "stem.cohort": 0,
+   "stem.cohortsubject": 0,
+   "stem.collection": 0,
+   "stem.collectionsession": 0,
+   "stem.epoch": 0,
+   "stem.project": 1,
+   "stem.session": 6,
+   "stem.sessiondatastorage": 0,
+   "stem.specimen": 0,
+   "stem.specimenset": 0,
+   "stem.subject": 1,
+   "taxonomies.anatomicalreference": 1,
+   "taxonomies.anatomicalregion": 2,
+   "taxonomies.behavioralcategory": 0,
+   "taxonomies.behavioralparadigm": 0,
+   "taxonomies.coordinatetransform": 0,
+   "taxonomies.regulatoryauthority": 0,
+   "taxonomies.setuptype": 0,
+   "taxonomies.species": 1,
+   "taxonomies.strain": 1,
+   "users.user": 1
+  }
+ },
+ "records": {
+  "dissemination.journal": [],
+  "dissemination.publication": [],
+  "modules.behavior": [],
+  "modules.consumablestock": [],
+  "modules.dataacquisition": [],
+  "modules.dataacquisitioninterface": [],
+  "modules.episodepersonnel": [],
+  "modules.equipment": [],
+  "modules.experimentalinterface": [],
+  "modules.manipulation": [],
+  "modules.manipulationinterface": [],
+  "modules.materialusage": [],
+  "modules.materialusagetarget": [],
+  "modules.moduleslogentry": [],
+  "modules.procedure": [],
+  "modules.procedureepisode": [],
+  "modules.procedureinterface": [],
+  "modules.procedurelog": [],
+  "modules.procedurestage": [],
+  "modules.procedurestagetarget": [],
+  "modules.specimenlog": [],
+  "modules.specimenprocedure": [],
+  "modules.specimenproceduretarget": [],
+  "modules.startendmoduleslogentry": [],
+  "modules.subjectlog": [],
+  "personal_attributes.behavioralassay": [],
+  "personal_attributes.datastorage": [],
+  "personal_attributes.inventory": [],
+  "personal_attributes.license": [],
+  "personal_attributes.protocol": [],
+  "personal_attributes.protocolallowedsubtype": [],
+  "personal_attributes.setup": [],
+  "resources.consumable": [],
+  "resources.hardwaredevice": [],
+  "resources.supplier": [],
+  "stem.breeding": [],
+  "stem.cohort": [],
+  "stem.cohortsubject": [],
+  "stem.collection": [],
+  "stem.collectionsession": [],
+  "stem.epoch": [],
+  "stem.project": [
+   {
+    "model": "stem.project",
+    "pk": "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "<p>Synthetic project used to test <b>brainstem-nwb</b>.</p>",
+     "extra_content_json": null,
+     "is_public": false,
+     "name": "Hippocampal dynamics (synthetic)",
+     "name_used_in_storage": "",
+     "publications": [],
+     "repository_links_json": null,
+     "tags": [
+      "hippocampus",
+      "synthetic"
+     ],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "stem.session": [
+   {
+    "model": "stem.session",
+    "pk": "2cf56463-1cdd-5d39-b733-b5eb3c52276c",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": "2024-04-02T10:00:00Z",
+     "description": "Day 2",
+     "extra_content_json": null,
+     "name": "SM05_day2",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [
+      "06452b07-c629-59bc-92c3-894e18093ab8"
+     ],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.session",
+    "pk": "bde24668-8d6f-5227-9606-4190dc960308",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": "2024-04-01T10:00:00Z",
+     "description": "Day 1",
+     "extra_content_json": null,
+     "name": "SM05_day1",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [
+      "06452b07-c629-59bc-92c3-894e18093ab8"
+     ],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.session",
+    "pk": "c9309361-8a8a-58bc-8722-b3f1770eff24",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": "2024-04-03T10:00:00Z",
+     "description": "No subject",
+     "extra_content_json": null,
+     "name": "orphan_session",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.session",
+    "pk": "d01eab5a-1ed5-5fdc-9fd5-d0b8ce0022fd",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": "2024-04-04T10:00:00Z",
+     "description": "Subject of another project",
+     "extra_content_json": null,
+     "name": "foreign_subject",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [
+      "99999999-0000-4000-8000-000000000000"
+     ],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.session",
+    "pk": "d225a1fa-a6e0-55aa-8479-e45db3260052",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": null,
+     "description": "No date",
+     "extra_content_json": null,
+     "name": "SM05_undated",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [
+      "06452b07-c629-59bc-92c3-894e18093ab8"
+     ],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.session",
+    "pk": "f7bb3e89-36bc-5fbe-ae52-b8c9021b1c9d",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [],
+     "date_time": "2024-04-05T10:00:00Z",
+     "description": "Not yet recorded",
+     "extra_content_json": null,
+     "name": "SM05_day3",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": null,
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "planned",
+     "subjects": [
+      "06452b07-c629-59bc-92c3-894e18093ab8"
+     ],
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "stem.sessiondatastorage": [],
+  "stem.specimen": [],
+  "stem.specimenset": [],
+  "stem.subject": [
+   {
+    "model": "stem.subject",
+    "pk": "06452b07-c629-59bc-92c3-894e18093ab8",
+    "fields": {
+     "birth_date": "2024-01-01",
+     "breeding": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "death_date": null,
+     "description": null,
+     "extra_content_json": null,
+     "genetic_line": "",
+     "genotype": "",
+     "licenses": [],
+     "name": "SynthMouse05",
+     "name_used_in_storage": null,
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "sex": "F",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "status": "active",
+     "strain": "4efbbdae-4a44-5b9b-8ceb-44de1be25125",
+     "subject_identifier": "",
+     "supplier": null,
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.anatomicalreference": [
+   {
+    "model": "taxonomies.anatomicalreference",
+    "pk": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+    "fields": {
+     "asset_manifest_url": "",
+     "axes_orientation": null,
+     "citation": "",
+     "code": "allen_mouse_ccfv3_2017",
+     "coordinate_space_identifier": "Allen CCFv3 PIR",
+     "created_at": "2024-01-01T00:00:00Z",
+     "homepage": "",
+     "is_active": true,
+     "license_name": "",
+     "license_url": "",
+     "name": "Allen Mouse Common Coordinate Framework",
+     "native_unit": "um",
+     "organ": "",
+     "origin_description": "",
+     "region_atlas_code": "AIA",
+     "resolution_um": null,
+     "shape": null,
+     "source": "",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "version": "2017",
+     "visualization_status": ""
+    }
+   }
+  ],
+  "taxonomies.anatomicalregion": [
+   {
+    "model": "taxonomies.anatomicalregion",
+    "pk": "0c5b1f2e-0000-4000-8000-0000000000a1",
+    "fields": {
+     "acronym": "CA1",
+     "name": "Field CA1",
+     "reference": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+     "description": "",
+     "region_id": 382,
+     "parent_acronym": "",
+     "graph_order": null,
+     "is_obsolete": false,
+     "replaced_by": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": null
+    }
+   },
+   {
+    "model": "taxonomies.anatomicalregion",
+    "pk": "0c5b1f2e-0000-4000-8000-0000000000a2",
+    "fields": {
+     "acronym": "MOp",
+     "name": "Primary motor area",
+     "reference": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+     "description": "",
+     "region_id": 985,
+     "parent_acronym": "",
+     "graph_order": null,
+     "is_obsolete": false,
+     "replaced_by": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": null
+    }
+   }
+  ],
+  "taxonomies.behavioralcategory": [],
+  "taxonomies.behavioralparadigm": [],
+  "taxonomies.coordinatetransform": [],
+  "taxonomies.regulatoryauthority": [],
+  "taxonomies.setuptype": [],
+  "taxonomies.species": [
+   {
+    "model": "taxonomies.species",
+    "pk": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+    "fields": {
+     "appearance": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": [
+      {
+       "source": "NCBI",
+       "id": "10090",
+       "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10090"
+      }
+     ],
+     "name": "Mus musculus",
+     "popular_name": "Mouse",
+     "rrid": "RRID:NCBITaxon_10090",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.strain": [
+   {
+    "model": "taxonomies.strain",
+    "pk": "4efbbdae-4a44-5b9b-8ceb-44de1be25125",
+    "fields": {
+     "appearance": "",
+     "breeding": "I",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "C57BL/6J",
+     "popular_name": "",
+     "rrid": "RRID:IMSR_JAX:000664",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "users.user": [
+   {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+     "first_name": "Ada",
+     "last_name": "Example"
+    }
+   }
+  ]
+ }
+}

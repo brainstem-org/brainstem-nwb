@@ -1,0 +1,1418 @@
+{
+ "export_info": {
+  "format_version": "2.1",
+  "exported_at": "2025-01-15T12:00:00.000000+00:00",
+  "project_id": "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54",
+  "project_ids": [
+   "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+  ],
+  "scope": "project",
+  "session_id": null,
+  "restricted": {},
+  "lab_resources": "Behavioral assays, data storages, setups, equipment, licenses, protocols, inventories and consumable stocks are included when the exporting user can read them and the project's records reference them.",
+  "record_count": 57,
+  "counts": {
+   "dissemination.journal": 1,
+   "dissemination.publication": 1,
+   "modules.behavior": 1,
+   "modules.consumablestock": 1,
+   "modules.dataacquisition": 2,
+   "modules.dataacquisitioninterface": 1,
+   "modules.episodepersonnel": 2,
+   "modules.equipment": 2,
+   "modules.experimentalinterface": 1,
+   "modules.manipulation": 0,
+   "modules.manipulationinterface": 0,
+   "modules.materialusage": 3,
+   "modules.materialusagetarget": 0,
+   "modules.moduleslogentry": 3,
+   "modules.procedure": 5,
+   "modules.procedureepisode": 1,
+   "modules.procedureinterface": 1,
+   "modules.procedurelog": 0,
+   "modules.procedurestage": 0,
+   "modules.procedurestagetarget": 0,
+   "modules.specimenlog": 0,
+   "modules.specimenprocedure": 0,
+   "modules.specimenproceduretarget": 0,
+   "modules.startendmoduleslogentry": 0,
+   "modules.subjectlog": 1,
+   "personal_attributes.behavioralassay": 1,
+   "personal_attributes.datastorage": 1,
+   "personal_attributes.inventory": 1,
+   "personal_attributes.license": 1,
+   "personal_attributes.protocol": 1,
+   "personal_attributes.protocolallowedsubtype": 0,
+   "personal_attributes.setup": 1,
+   "resources.consumable": 3,
+   "resources.hardwaredevice": 1,
+   "resources.supplier": 3,
+   "stem.breeding": 0,
+   "stem.cohort": 0,
+   "stem.cohortsubject": 0,
+   "stem.collection": 0,
+   "stem.collectionsession": 0,
+   "stem.epoch": 2,
+   "stem.project": 1,
+   "stem.session": 1,
+   "stem.sessiondatastorage": 1,
+   "stem.specimen": 0,
+   "stem.specimenset": 0,
+   "stem.subject": 1,
+   "taxonomies.anatomicalreference": 1,
+   "taxonomies.anatomicalregion": 2,
+   "taxonomies.behavioralcategory": 1,
+   "taxonomies.behavioralparadigm": 1,
+   "taxonomies.coordinatetransform": 0,
+   "taxonomies.regulatoryauthority": 1,
+   "taxonomies.setuptype": 1,
+   "taxonomies.species": 1,
+   "taxonomies.strain": 1,
+   "users.user": 3
+  }
+ },
+ "records": {
+  "dissemination.journal": [
+   {
+    "model": "dissemination.journal",
+    "pk": "4f1b1165-1c45-54f5-b698-2ede1c5faab8",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": null,
+     "name": "Journal of Synthetic Neuroscience",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "website": null
+    }
+   }
+  ],
+  "dissemination.publication": [
+   {
+    "model": "dissemination.publication",
+    "pk": "0114e6b3-3ffd-5979-ab70-8e979227b3dd",
+    "fields": {
+     "abstract": "",
+     "authors": "Example A, Example B",
+     "created_at": "2024-01-01T00:00:00Z",
+     "doi": "10.0000/synthetic.0001",
+     "journal": "4f1b1165-1c45-54f5-b698-2ede1c5faab8",
+     "pdf_url": "",
+     "publication_date": "2025-01-01",
+     "publication_url": "",
+     "title": "Synthetic hippocampal dynamics",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "volume": ""
+    }
+   }
+  ],
+  "modules.behavior": [
+   {
+    "model": "modules.behavior",
+    "pk": "4cc1df62-6899-5e34-938f-1aec4ce3b2d6",
+    "fields": {
+     "behavioralassay": "48ccba1f-fbee-5650-b25b-58ad224886df",
+     "created_at": "2024-01-01T00:00:00Z",
+     "notes": null,
+     "order": 0,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "setup": "972ba099-cef5-5f7f-aaf1-bd30ae8858c7",
+     "subjects": [
+      "91b63218-f365-5593-97ee-70b305b9844c"
+     ],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.consumablestock": [
+   {
+    "model": "modules.consumablestock",
+    "pk": "bea3dec5-7d62-5b02-a496-c903c260d35d",
+    "fields": {
+     "acquisition_date": null,
+     "consumable": "0d0973e6-914d-5b60-8de7-ec33dbef159b",
+     "cost": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "expiration_date": null,
+     "intended_use": null,
+     "inventory": "63043599-8b92-5716-ac2b-955ba6cdac44",
+     "notes": null,
+     "status": "",
+     "storage_conditions": null,
+     "storage_location": null,
+     "type": "VirusSolution",
+     "type_json": {
+      "batchId": "B-17",
+      "titer": {
+       "value": 20000000000000.0,
+       "unit": "vg/mL"
+      }
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.dataacquisition": [
+   {
+    "model": "modules.dataacquisition",
+    "pk": "2050580b-1e85-56be-a244-b6e42c869401",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "equipment": [
+      "43a19567-d26c-5392-8dc7-10c99727c497"
+     ],
+     "image": "",
+     "interfaces": [
+      "390c1447-104b-5d47-863d-8a71dfe3d836"
+     ],
+     "notes": null,
+     "order": 0,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "type": "ExtracellularEphys",
+     "type_json": {
+      "fileName": "SM01_240401.dat",
+      "format": "dat",
+      "type": "int16",
+      "nChannels": 64,
+      "nSamples": 72000000,
+      "sr": {
+       "value": 20000,
+       "unit": "Hz"
+      },
+      "lsb": {
+       "value": 0.195,
+       "unit": "µV"
+      },
+      "electrodeGroups": [
+       {
+        "label": "shank1",
+        "channels": [
+         0,
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         7,
+         8,
+         9,
+         10,
+         11,
+         12,
+         13,
+         14,
+         15,
+         16,
+         17,
+         18,
+         19,
+         20,
+         21,
+         22,
+         23,
+         24,
+         25,
+         26,
+         27,
+         28,
+         29,
+         30,
+         31
+        ]
+       },
+       {
+        "label": "shank2",
+        "channels": [
+         32,
+         33,
+         34,
+         35,
+         36,
+         37,
+         38,
+         39,
+         40,
+         41,
+         42,
+         43,
+         44,
+         45,
+         46,
+         47,
+         48,
+         49,
+         50,
+         51,
+         52,
+         53,
+         54,
+         55,
+         56,
+         57,
+         58,
+         59,
+         60,
+         61,
+         62,
+         63
+        ]
+       }
+      ]
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.dataacquisition",
+    "pk": "8e053518-ef9b-5663-9e02-d81563b77026",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "equipment": [
+      "f9bb70ad-2698-5b07-b435-72dd21468904"
+     ],
+     "image": "",
+     "interfaces": [],
+     "notes": null,
+     "order": 1,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "type": "BehavioralTracking",
+     "type_json": {
+      "fileName": "SM01_240401.avi",
+      "format": "avi",
+      "frameRate": {
+       "value": 30,
+       "unit": "Hz"
+      }
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.dataacquisitioninterface": [
+   {
+    "model": "modules.dataacquisitioninterface",
+    "pk": "a60f6f8c-bfda-5b9e-b03e-6217273d8ded",
+    "fields": {
+     "dataacquisition": "2050580b-1e85-56be-a244-b6e42c869401",
+     "interface": "390c1447-104b-5d47-863d-8a71dfe3d836",
+     "metadata_json": null,
+     "metadata_schema_version": "",
+     "order": 0
+    }
+   }
+  ],
+  "modules.episodepersonnel": [
+   {
+    "model": "modules.episodepersonnel",
+    "pk": "23f47549-be36-5556-b664-e3acbf184ec7",
+    "fields": {
+     "episode": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+     "person": 11,
+     "role": "surgeon"
+    }
+   },
+   {
+    "model": "modules.episodepersonnel",
+    "pk": "ae7ef522-5e95-54ec-ab65-d8d4143fda35",
+    "fields": {
+     "episode": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+     "person": 12,
+     "role": "assistant"
+    }
+   }
+  ],
+  "modules.equipment": [
+   {
+    "model": "modules.equipment",
+    "pk": "43a19567-d26c-5392-8dc7-10c99727c497",
+    "fields": {
+     "consumable": null,
+     "coordinates": "",
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": null,
+     "hardwaredevice": "f6293b63-4b43-5c86-9a66-57b386b8f6db",
+     "name": "Intan amplifier",
+     "notes": null,
+     "setup": "972ba099-cef5-5f7f-aaf1-bd30ae8858c7",
+     "type": "Amplifier",
+     "type_json": null,
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.equipment",
+    "pk": "f9bb70ad-2698-5b07-b435-72dd21468904",
+    "fields": {
+     "consumable": null,
+     "coordinates": "",
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": null,
+     "hardwaredevice": null,
+     "name": "Overhead camera",
+     "notes": null,
+     "setup": "972ba099-cef5-5f7f-aaf1-bd30ae8858c7",
+     "type": "Camera",
+     "type_json": null,
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.experimentalinterface": [
+   {
+    "model": "modules.experimentalinterface",
+    "pk": "390c1447-104b-5d47-863d-8a71dfe3d836",
+    "fields": {
+     "coordinates": null,
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "equipment": [],
+     "installed_at": "2024-03-01T11:30:00Z",
+     "name": "Probe A",
+     "notes": null,
+     "persistence": "chronic",
+     "removed_at": null,
+     "source_material_usage": "bc6afe9c-0aff-5fee-b58d-d504b8cb748f",
+     "specimen_set": null,
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [
+      "0c5b1f2e-0000-4000-8000-0000000000a1"
+     ],
+     "target_specimens": [],
+     "type": "SiliconProbe",
+     "type_json": {
+      "deviceIdentifier": "SN-00451",
+      "channelCount": 64,
+      "shankCount": 8
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.manipulation": [],
+  "modules.manipulationinterface": [],
+  "modules.materialusage": [
+   {
+    "model": "modules.materialusage",
+    "pk": "6845e0b2-49bb-54da-a009-c1f47a5edd14",
+    "fields": {
+     "consumable": "c1955cf1-562b-52be-9439-b84ef9a743e6",
+     "consumable_stock": null,
+     "copied_from": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "details_json": {
+      "concentration": {
+       "value": 1.5,
+       "unit": "%"
+      }
+     },
+     "details_schema_version": "",
+     "experimental_interface": null,
+     "manual_name": "",
+     "notes": "",
+     "order": 0,
+     "procedure": "11219f57-ae67-58ab-9ec3-5beabd18863c",
+     "source_snapshot": null,
+     "specimen_procedure": null,
+     "stage": null,
+     "target_specimens": [],
+     "type": "AnestheticAgent",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.materialusage",
+    "pk": "a75461b2-7648-5267-854a-a9e6f8336427",
+    "fields": {
+     "consumable": null,
+     "consumable_stock": "bea3dec5-7d62-5b02-a496-c903c260d35d",
+     "copied_from": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "details_json": {
+      "volume": {
+       "value": 300,
+       "unit": "nL"
+      }
+     },
+     "details_schema_version": "",
+     "experimental_interface": null,
+     "manual_name": "",
+     "notes": "",
+     "order": 0,
+     "procedure": "061a3c60-b4d8-514e-a52f-9a8b39705c46",
+     "source_snapshot": null,
+     "specimen_procedure": null,
+     "stage": null,
+     "target_specimens": [],
+     "type": "ViralComponent",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.materialusage",
+    "pk": "bc6afe9c-0aff-5fee-b58d-d504b8cb748f",
+    "fields": {
+     "consumable": "d6cea768-23d2-5036-be01-7d9cbd74472f",
+     "consumable_stock": null,
+     "copied_from": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "details_json": null,
+     "details_schema_version": "",
+     "experimental_interface": null,
+     "manual_name": "",
+     "notes": "",
+     "order": 0,
+     "procedure": "6a62f701-599b-5ed7-9ad3-e29161f5da9c",
+     "source_snapshot": null,
+     "specimen_procedure": null,
+     "stage": null,
+     "target_specimens": [],
+     "type": "SiliconProbe",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.materialusagetarget": [],
+  "modules.moduleslogentry": [
+   {
+    "model": "modules.moduleslogentry",
+    "pk": "468d30dd-ef1b-561a-84fc-8affc01de62c",
+    "fields": {
+     "content_type": "modules.subjectlog",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-31T09:00:00Z",
+     "notes": "",
+     "object_id": "e8ab14ad-8dc2-5404-8630-e373a2aa4949",
+     "performedBy": 12,
+     "phase": "",
+     "procedure_episode": null,
+     "type_json": {
+      "weight": {
+       "value": 25.3,
+       "unit": "g"
+      }
+     },
+     "type_schema_version": "1.1.1",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.moduleslogentry",
+    "pk": "c353a8e9-4936-582f-b4ff-4ecd966403ad",
+    "fields": {
+     "content_type": "modules.subjectlog",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-25T09:00:00Z",
+     "notes": "",
+     "object_id": "e8ab14ad-8dc2-5404-8630-e373a2aa4949",
+     "performedBy": 12,
+     "phase": "",
+     "procedure_episode": null,
+     "type_json": {
+      "weight": {
+       "value": 24.1,
+       "unit": "g"
+      }
+     },
+     "type_schema_version": "1.1.1",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.moduleslogentry",
+    "pk": "cb3e8a5d-bd28-5d16-9f75-1a0d609539ea",
+    "fields": {
+     "content_type": "modules.subjectlog",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-04-08T09:00:00Z",
+     "notes": "",
+     "object_id": "e8ab14ad-8dc2-5404-8630-e373a2aa4949",
+     "performedBy": 12,
+     "phase": "",
+     "procedure_episode": null,
+     "type_json": {
+      "weight": {
+       "value": 26.0,
+       "unit": "g"
+      }
+     },
+     "type_schema_version": "1.1.1",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.procedure": [
+   {
+    "model": "modules.procedure",
+    "pk": "061a3c60-b4d8-514e-a52f-9a8b39705c46",
+    "fields": {
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "coordinates": "Stereotaxic_BregmaBrainSurface",
+     "coordinates_json": {
+      "apCoordinate": {
+       "value": -2.0,
+       "unit": "mm"
+      },
+      "mlCoordinate": {
+       "value": 1.5,
+       "unit": "mm"
+      },
+      "depth": {
+       "value": 1.2,
+       "unit": "mm"
+      }
+     },
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-01T10:00:00Z",
+     "equipment": [],
+     "interfaces": [],
+     "licenses": [],
+     "notes": null,
+     "performed_by": 11,
+     "procedure_episode": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+     "protocol": "47d54990-da5c-561a-bc30-ad21e264fc8c",
+     "status": "performed",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [
+      "0c5b1f2e-0000-4000-8000-0000000000a1"
+     ],
+     "type": "VirusInjection",
+     "type_json": {
+      "volume": {
+       "value": 300,
+       "unit": "nL"
+      },
+      "rate": {
+       "value": 50,
+       "unit": "nL/min"
+      },
+      "route": "intraparenchymal"
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.procedure",
+    "pk": "11219f57-ae67-58ab-9ec3-5beabd18863c",
+    "fields": {
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "coordinates": "",
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-01T09:05:00Z",
+     "equipment": [],
+     "interfaces": [],
+     "licenses": [],
+     "notes": null,
+     "performed_by": null,
+     "procedure_episode": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+     "protocol": "47d54990-da5c-561a-bc30-ad21e264fc8c",
+     "status": "performed",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [],
+     "type": "Anesthesia",
+     "type_json": {
+      "depth": "surgical_plane",
+      "duration": {
+       "value": 150,
+       "unit": "min"
+      }
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.procedure",
+    "pk": "6a62f701-599b-5ed7-9ad3-e29161f5da9c",
+    "fields": {
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "coordinates": "Stereotaxic_BregmaBrainSurface",
+     "coordinates_json": {
+      "apCoordinate": {
+       "value": -2.0,
+       "unit": "mm"
+      },
+      "mlCoordinate": {
+       "value": 1.5,
+       "unit": "mm"
+      },
+      "depth": {
+       "value": 1.0,
+       "unit": "mm"
+      }
+     },
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-01T11:00:00Z",
+     "equipment": [],
+     "interfaces": [
+      "390c1447-104b-5d47-863d-8a71dfe3d836"
+     ],
+     "licenses": [],
+     "notes": "Probe lowered slowly.",
+     "performed_by": 11,
+     "procedure_episode": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+     "protocol": "47d54990-da5c-561a-bc30-ad21e264fc8c",
+     "status": "performed",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [
+      "0c5b1f2e-0000-4000-8000-0000000000a1"
+     ],
+     "type": "SiliconProbeImplant",
+     "type_json": {
+      "duraHandling": "dura_removed",
+      "fixationMethod": "dental_cement"
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.procedure",
+    "pk": "f79f072f-61b1-5ee3-9013-f8eb447dc941",
+    "fields": {
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "coordinates": "",
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-05-01T09:00:00Z",
+     "equipment": [],
+     "interfaces": [],
+     "licenses": [],
+     "notes": null,
+     "performed_by": null,
+     "procedure_episode": null,
+     "protocol": null,
+     "status": "performed",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [],
+     "type": "PerfusionFixation",
+     "type_json": null,
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "modules.procedure",
+    "pk": "f7ab1c34-8487-57d4-9981-31d394bea124",
+    "fields": {
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "coordinates": "",
+     "coordinates_json": null,
+     "coordinates_schema_version": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "date_time": "2024-03-02T09:00:00Z",
+     "equipment": [],
+     "interfaces": [],
+     "licenses": [],
+     "notes": null,
+     "performed_by": null,
+     "procedure_episode": null,
+     "protocol": null,
+     "status": "planned",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "target_regions": [],
+     "type": "Analgesic",
+     "type_json": null,
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.procedureepisode": [
+   {
+    "model": "modules.procedureepisode",
+    "pk": "d7f23b39-c795-57ef-986d-f5bfb92141f2",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": null,
+     "end_date_time": "2024-03-01T12:00:00Z",
+     "intervention_class": "surgical",
+     "licenses": [],
+     "name": "Implant surgery",
+     "protocol": "47d54990-da5c-561a-bc30-ad21e264fc8c",
+     "recovery_outcome": "",
+     "severity": null,
+     "start_date_time": "2024-03-01T09:00:00Z",
+     "status": "complete",
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "modules.procedureinterface": [
+   {
+    "model": "modules.procedureinterface",
+    "pk": "d1cb4cab-86a4-5d60-989b-cefb3f22d054",
+    "fields": {
+     "interface": "390c1447-104b-5d47-863d-8a71dfe3d836",
+     "notes": "",
+     "procedure": "6a62f701-599b-5ed7-9ad3-e29161f5da9c",
+     "relationship": "created"
+    }
+   }
+  ],
+  "modules.procedurelog": [],
+  "modules.procedurestage": [],
+  "modules.procedurestagetarget": [],
+  "modules.specimenlog": [],
+  "modules.specimenprocedure": [],
+  "modules.specimenproceduretarget": [],
+  "modules.startendmoduleslogentry": [],
+  "modules.subjectlog": [
+   {
+    "model": "modules.subjectlog",
+    "pk": "e8ab14ad-8dc2-5404-8630-e373a2aa4949",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "Weekly weights",
+     "next_check_due_at": null,
+     "protocol": null,
+     "subject": "91b63218-f365-5593-97ee-70b305b9844c",
+     "type": "Weighing",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "personal_attributes.behavioralassay": [
+   {
+    "model": "personal_attributes.behavioralassay",
+    "pk": "48ccba1f-fbee-5650-b25b-58ad224886df",
+    "fields": {
+     "behavioral_paradigm": "ad7f0d35-50e6-5b69-8cf2-c787ec80f844",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "Free exploration of a 1 m square arena",
+     "is_public": false,
+     "licenses": [],
+     "name": "Open field",
+     "setup_type": null,
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "personal_attributes.datastorage": [
+   {
+    "model": "personal_attributes.datastorage",
+    "pk": "f66adc18-79ba-5918-bf60-813cfe5b8f5d",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "data_organization": [
+      {
+       "type": "subject"
+      },
+      {
+       "type": "session"
+      }
+     ],
+     "data_protocols": null,
+     "description": null,
+     "is_public": false,
+     "location": null,
+     "name": "Lab server",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "personal_attributes.inventory": [
+   {
+    "model": "personal_attributes.inventory",
+    "pk": "63043599-8b92-5716-ac2b-955ba6cdac44",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": null,
+     "is_public": false,
+     "location": null,
+     "name": "-80 freezer",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "personal_attributes.license": [
+   {
+    "model": "personal_attributes.license",
+    "pk": "9af165df-8956-50c8-9b56-5288d7fe28b1",
+    "fields": {
+     "country": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": null,
+     "is_public": false,
+     "license_document": "",
+     "license_holders": [],
+     "license_number": "AN-2024-001",
+     "name": "Animal license",
+     "regulatory_authority": "2eef5852-579f-54e1-834a-f44000af2ba7",
+     "status": "active",
+     "type": "animal_experiment",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "valid_from": null,
+     "valid_until": null
+    }
+   }
+  ],
+  "personal_attributes.protocol": [
+   {
+    "model": "personal_attributes.protocol",
+    "pk": "47d54990-da5c-561a-bc30-ad21e264fc8c",
+    "fields": {
+     "attachment": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": null,
+     "is_public": false,
+     "licenses": [],
+     "name": "Rodent survival surgery",
+     "protocol_type": "surgical",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "url": "https://example.org/protocols/surgery",
+     "user": 7
+    }
+   }
+  ],
+  "personal_attributes.protocolallowedsubtype": [],
+  "personal_attributes.setup": [
+   {
+    "model": "personal_attributes.setup",
+    "pk": "972ba099-cef5-5f7f-aaf1-bd30ae8858c7",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "Open field arena with overhead camera",
+     "image": "",
+     "is_public": false,
+     "location": "Room 101",
+     "name": "Rig 1",
+     "setup_type": "e39b25bf-179a-54fe-9f74-bb6e752e43dc",
+     "specifications": null,
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "resources.consumable": [
+   {
+    "model": "resources.consumable",
+    "pk": "0d0973e6-914d-5b60-8de7-ec33dbef159b",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "AAV9-hSyn-GCaMP6f",
+     "rrid": "RRID:Addgene_100837",
+     "supplier": "435119bd-14c0-5981-ad2a-9ad6abf7c136",
+     "type": "VirusConstruct",
+     "type_json": {
+      "virusType": "aav",
+      "capsid": "AAV9",
+      "promoter": "hSyn",
+      "gene": "GCaMP6f"
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "resources.consumable",
+    "pk": "c1955cf1-562b-52be-9439-b84ef9a743e6",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "Isoflurane",
+     "rrid": null,
+     "supplier": null,
+     "type": "Drug",
+     "type_json": {},
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "resources.consumable",
+    "pk": "d6cea768-23d2-5036-be01-7d9cbd74472f",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "Buzsaki64",
+     "rrid": null,
+     "supplier": "e5ded05b-8b15-5932-a999-8fa8b47c6a99",
+     "type": "SiliconProbeDesign",
+     "type_json": {
+      "productId": "B64-8x8",
+      "nChannels": 64,
+      "nShanks": 8
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "resources.hardwaredevice": [
+   {
+    "model": "resources.hardwaredevice",
+    "pk": "f6293b63-4b43-5c86-9a66-57b386b8f6db",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "RHD2164 headstage",
+     "rrid": "RRID:SCR_019318",
+     "supplier": "1ed3924a-9bcb-59b5-b134-479e0bafadb7",
+     "type": "Amplifier",
+     "type_json": {
+      "productId": "C3314",
+      "nChannels": 64
+     },
+     "type_schema_version": "",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "resources.supplier": [
+   {
+    "model": "resources.supplier",
+    "pk": "1ed3924a-9bcb-59b5-b134-479e0bafadb7",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "name": "Intan Technologies",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "website": "https://intantech.com"
+    }
+   },
+   {
+    "model": "resources.supplier",
+    "pk": "435119bd-14c0-5981-ad2a-9ad6abf7c136",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "name": "Addgene",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "website": ""
+    }
+   },
+   {
+    "model": "resources.supplier",
+    "pk": "e5ded05b-8b15-5932-a999-8fa8b47c6a99",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "name": "Cambridge NeuroTech",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "website": ""
+    }
+   }
+  ],
+  "stem.breeding": [],
+  "stem.cohort": [],
+  "stem.cohortsubject": [],
+  "stem.collection": [],
+  "stem.collectionsession": [],
+  "stem.epoch": [
+   {
+    "model": "stem.epoch",
+    "pk": "2eb9d624-001b-5185-a9b3-52cea0ef566a",
+    "fields": {
+     "behavior": "4cc1df62-6899-5e34-938f-1aec4ce3b2d6",
+     "created_at": "2024-01-01T00:00:00Z",
+     "dataacquisitions": [
+      "2050580b-1e85-56be-a244-b6e42c869401",
+      "8e053518-ef9b-5663-9e02-d81563b77026"
+     ],
+     "end": "00:30:00",
+     "manipulations": [],
+     "name": "exploration",
+     "order": 0,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "start": "00:00:00",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   },
+   {
+    "model": "stem.epoch",
+    "pk": "479a9c1d-919e-5cc5-90e6-d207ce0fc979",
+    "fields": {
+     "behavior": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "dataacquisitions": [
+      "2050580b-1e85-56be-a244-b6e42c869401"
+     ],
+     "end": "01:30:00.500000",
+     "manipulations": [],
+     "name": "sleep",
+     "order": 1,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "start": "00:30:00",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "stem.project": [
+   {
+    "model": "stem.project",
+    "pk": "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "<p>Synthetic project used to test <b>brainstem-nwb</b>.</p>",
+     "extra_content_json": null,
+     "is_public": false,
+     "name": "Hippocampal dynamics (synthetic)",
+     "name_used_in_storage": "",
+     "publications": [
+      "0114e6b3-3ffd-5979-ab70-8e979227b3dd"
+     ],
+     "repository_links_json": null,
+     "tags": [
+      "hippocampus",
+      "synthetic"
+     ],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "stem.session": [
+   {
+    "model": "stem.session",
+    "pk": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "datastorage": [
+      "f66adc18-79ba-5918-bf60-813cfe5b8f5d"
+     ],
+     "date_time": "2024-04-01T10:00:00.000Z",
+     "description": "<p>Open field exploration followed by sleep.</p>",
+     "extra_content_json": [
+      {
+       "key": "room temperature",
+       "value": "22 C"
+      }
+     ],
+     "name": "SM01_2024-04-01",
+     "name_used_in_storage": "SM01_240401",
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "repository_links_json": [
+      {
+       "repository": "DANDI",
+       "url": "https://dandiarchive.org/dandiset/000000"
+      }
+     ],
+     "session_type": "subject",
+     "specimen_sets": [],
+     "status": "performed",
+     "subjects": [
+      "91b63218-f365-5593-97ee-70b305b9844c"
+     ],
+     "tags": [
+      "open field"
+     ],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "stem.sessiondatastorage": [
+   {
+    "model": "stem.sessiondatastorage",
+    "pk": "0a85403a-a8bc-57c1-a125-939fdf130e91",
+    "fields": {
+     "datastorage": "f66adc18-79ba-5918-bf60-813cfe5b8f5d",
+     "order": 0,
+     "session": "6b21bf59-d6aa-5a5b-927e-11385d092373",
+     "user": 7
+    }
+   }
+  ],
+  "stem.specimen": [],
+  "stem.specimenset": [],
+  "stem.subject": [
+   {
+    "model": "stem.subject",
+    "pk": "91b63218-f365-5593-97ee-70b305b9844c",
+    "fields": {
+     "birth_date": "2024-01-02",
+     "breeding": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "death_date": null,
+     "description": "<p>Implanted for chronic recording.</p>",
+     "extra_content_json": null,
+     "genetic_line": "",
+     "genotype": "wild type",
+     "licenses": [
+      "9af165df-8956-50c8-9b56-5288d7fe28b1"
+     ],
+     "name": "SynthMouse01",
+     "name_used_in_storage": "SM01",
+     "projects": [
+      "ec4eb32f-b4b0-5f91-b3ad-e70e1d020f54"
+     ],
+     "sex": "M",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "status": "active",
+     "strain": "4efbbdae-4a44-5b9b-8ceb-44de1be25125",
+     "subject_identifier": "EAR-0101",
+     "supplier": null,
+     "tags": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.anatomicalreference": [
+   {
+    "model": "taxonomies.anatomicalreference",
+    "pk": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+    "fields": {
+     "asset_manifest_url": "",
+     "axes_orientation": null,
+     "citation": "",
+     "code": "allen_mouse_ccfv3_2017",
+     "coordinate_space_identifier": "Allen CCFv3 PIR",
+     "created_at": "2024-01-01T00:00:00Z",
+     "homepage": "",
+     "is_active": true,
+     "license_name": "",
+     "license_url": "",
+     "name": "Allen Mouse Common Coordinate Framework",
+     "native_unit": "um",
+     "organ": "",
+     "origin_description": "",
+     "region_atlas_code": "AIA",
+     "resolution_um": null,
+     "shape": null,
+     "source": "",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "version": "2017",
+     "visualization_status": ""
+    }
+   }
+  ],
+  "taxonomies.anatomicalregion": [
+   {
+    "model": "taxonomies.anatomicalregion",
+    "pk": "0c5b1f2e-0000-4000-8000-0000000000a1",
+    "fields": {
+     "acronym": "CA1",
+     "name": "Field CA1",
+     "reference": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+     "description": "",
+     "region_id": 382,
+     "parent_acronym": "",
+     "graph_order": null,
+     "is_obsolete": false,
+     "replaced_by": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": null
+    }
+   },
+   {
+    "model": "taxonomies.anatomicalregion",
+    "pk": "0c5b1f2e-0000-4000-8000-0000000000a2",
+    "fields": {
+     "acronym": "MOp",
+     "name": "Primary motor area",
+     "reference": "bc0094c2-f14a-5527-be3f-d2b49eb31a43",
+     "description": "",
+     "region_id": 985,
+     "parent_acronym": "",
+     "graph_order": null,
+     "is_obsolete": false,
+     "replaced_by": null,
+     "created_at": "2024-01-01T00:00:00Z",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": null
+    }
+   }
+  ],
+  "taxonomies.behavioralcategory": [
+   {
+    "model": "taxonomies.behavioralcategory",
+    "pk": "e23d3150-dfd1-5bf5-84aa-3a487c2a2bf1",
+    "fields": {
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "name": "Exploration",
+     "parent": null,
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.behavioralparadigm": [
+   {
+    "model": "taxonomies.behavioralparadigm",
+    "pk": "ad7f0d35-50e6-5b69-8cf2-c787ec80f844",
+    "fields": {
+     "category": "e23d3150-dfd1-5bf5-84aa-3a487c2a2bf1",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "Open field test",
+     "original_publication": "",
+     "reference_url": "",
+     "rrid": null,
+     "species": [],
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.coordinatetransform": [],
+  "taxonomies.regulatoryauthority": [
+   {
+    "model": "taxonomies.regulatoryauthority",
+    "pk": "2eef5852-579f-54e1-834a-f44000af2ba7",
+    "fields": {
+     "abbreviation": "SAWB",
+     "authority_type": "",
+     "country": "DK",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "is_active": true,
+     "name": "Synthetic Animal Welfare Board",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7,
+     "website": ""
+    }
+   }
+  ],
+  "taxonomies.setuptype": [
+   {
+    "model": "taxonomies.setuptype",
+    "pk": "e39b25bf-179a-54fe-9f74-bb6e752e43dc",
+    "fields": {
+     "category": "FA",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "name": "Freely moving, awake",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.species": [
+   {
+    "model": "taxonomies.species",
+    "pk": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+    "fields": {
+     "appearance": "",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": [
+      {
+       "source": "NCBI",
+       "id": "10090",
+       "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10090"
+      }
+     ],
+     "name": "Mus musculus",
+     "popular_name": "Mouse",
+     "rrid": "RRID:NCBITaxon_10090",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "taxonomies.strain": [
+   {
+    "model": "taxonomies.strain",
+    "pk": "4efbbdae-4a44-5b9b-8ceb-44de1be25125",
+    "fields": {
+     "appearance": "",
+     "breeding": "I",
+     "created_at": "2024-01-01T00:00:00Z",
+     "description": "",
+     "external_identifiers": null,
+     "name": "C57BL/6J",
+     "popular_name": "",
+     "rrid": "RRID:IMSR_JAX:000664",
+     "species": "9d568915-1c63-53b6-a633-9fc5b47bc92a",
+     "updated_at": "2024-01-01T00:00:00Z",
+     "user": 7
+    }
+   }
+  ],
+  "users.user": [
+   {
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+     "first_name": "Grace",
+     "last_name": "Surgeon"
+    }
+   },
+   {
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+     "first_name": "Alan",
+     "last_name": "Assistant"
+    }
+   },
+   {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+     "first_name": "Ada",
+     "last_name": "Example"
+    }
+   }
+  ]
+ }
+}

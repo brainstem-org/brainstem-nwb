@@ -1,0 +1,2355 @@
+{
+  "$defs": {
+    "Attribution": {
+      "additionalProperties": false,
+      "description": "Why a BrainSTEM record is part of a unit, or why it was left out.",
+      "properties": {
+        "decision": {
+          "enum": [
+            "included",
+            "shared",
+            "excluded"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "pk": {
+          "title": "Pk",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "pk",
+        "decision",
+        "reason"
+      ],
+      "title": "Attribution",
+      "type": "object"
+    },
+    "BrainstemExtensionPlan": {
+      "additionalProperties": false,
+      "description": "The ndx-brainstem content of a file (``--extension brainstem``).",
+      "properties": {
+        "attributes": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ]
+          },
+          "title": "Attributes",
+          "type": "object"
+        },
+        "namespace_version": {
+          "default": "0.2.0",
+          "title": "Namespace Version",
+          "type": "string"
+        },
+        "schemas": {
+          "items": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "title": "Schemas",
+          "type": "array"
+        },
+        "schemas_terms": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schemas Terms"
+        },
+        "tables": {
+          "items": {
+            "$ref": "#/$defs/ExtensionTablePlan"
+          },
+          "title": "Tables",
+          "type": "array"
+        }
+      },
+      "title": "BrainstemExtensionPlan",
+      "type": "object"
+    },
+    "ConversionWarning": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "nwb_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nwb Path"
+        },
+        "rule_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Id"
+        },
+        "severity": {
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourcePointer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "ConversionWarning",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "records_in_units": {
+          "title": "Records In Units",
+          "type": "integer"
+        },
+        "records_total": {
+          "title": "Records Total",
+          "type": "integer"
+        },
+        "records_unreached": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Records Unreached",
+          "type": "object"
+        }
+      },
+      "required": [
+        "records_total",
+        "records_in_units"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "DataModelInfo": {
+      "additionalProperties": false,
+      "description": "The BrainSTEM data model the export was read with: read from the server at run time, never bundled.",
+      "properties": {
+        "data_model": {
+          "title": "Data Model",
+          "type": "string"
+        },
+        "export_format_version": {
+          "title": "Export Format Version",
+          "type": "string"
+        },
+        "license_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License Url"
+        },
+        "server": {
+          "title": "Server",
+          "type": "string"
+        },
+        "server_commit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Server Commit"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "server",
+        "data_model",
+        "export_format_version",
+        "sha256"
+      ],
+      "title": "DataModelInfo",
+      "type": "object"
+    },
+    "DataSource": {
+      "additionalProperties": false,
+      "description": "Where a DataAcquisition's raw data lives, as far as BrainSTEM records it (input to Phase 4).",
+      "properties": {
+        "dataacquisition_id": {
+          "title": "Dataacquisition Id",
+          "type": "string"
+        },
+        "datastorages": {
+          "items": {
+            "$ref": "#/$defs/RecordRef"
+          },
+          "title": "Datastorages",
+          "type": "array"
+        },
+        "file_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Name"
+        },
+        "format": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Format"
+        },
+        "raw_conversion": {
+          "$ref": "#/$defs/RawConversion"
+        },
+        "repository_links": {
+          "items": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "title": "Repository Links",
+          "type": "array"
+        },
+        "session_storage_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Storage Name"
+        },
+        "subject_storage_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject Storage Name"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataacquisition_id",
+        "type"
+      ],
+      "title": "DataSource",
+      "type": "object"
+    },
+    "DeviceModelPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "manufacturer": {
+          "title": "Manufacturer",
+          "type": "string"
+        },
+        "model_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Number"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "manufacturer"
+      ],
+      "title": "DeviceModelPlan",
+      "type": "object"
+    },
+    "DevicePlan": {
+      "additionalProperties": false,
+      "properties": {
+        "brainstem_id": {
+          "title": "Brainstem Id",
+          "type": "string"
+        },
+        "brainstem_label": {
+          "title": "Brainstem Label",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "serial_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Serial Number"
+        }
+      },
+      "required": [
+        "name",
+        "brainstem_label",
+        "brainstem_id"
+      ],
+      "title": "DevicePlan",
+      "type": "object"
+    },
+    "ElectrodeGroupPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "brainstem_interface_id": {
+          "title": "Brainstem Interface Id",
+          "type": "string"
+        },
+        "channels": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channels"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "device": {
+          "title": "Device",
+          "type": "string"
+        },
+        "location": {
+          "title": "Location",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "location",
+        "device",
+        "brainstem_interface_id"
+      ],
+      "title": "ElectrodeGroupPlan",
+      "type": "object"
+    },
+    "EpochColumnPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "EpochColumnPlan",
+      "type": "object"
+    },
+    "EpochRowPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "start_time": {
+          "title": "Start Time",
+          "type": "number"
+        },
+        "stop_time": {
+          "title": "Stop Time",
+          "type": "number"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "values": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "start_time",
+        "stop_time",
+        "tags",
+        "values"
+      ],
+      "title": "EpochRowPlan",
+      "type": "object"
+    },
+    "EpochsPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/EpochColumnPlan"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/EpochRowPlan"
+          },
+          "title": "Rows",
+          "type": "array"
+        }
+      },
+      "title": "EpochsPlan",
+      "type": "object"
+    },
+    "ExporterInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "hdmf": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hdmf"
+        },
+        "mapping_version": {
+          "title": "Mapping Version",
+          "type": "string"
+        },
+        "name": {
+          "default": "brainstem-nwb",
+          "title": "Name",
+          "type": "string"
+        },
+        "nwb_schema": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nwb Schema"
+        },
+        "pynwb": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pynwb"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "mapping_version"
+      ],
+      "title": "ExporterInfo",
+      "type": "object"
+    },
+    "ExtensionColumnPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "link_table": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Link Table"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "ExtensionColumnPlan",
+      "type": "object"
+    },
+    "ExtensionTablePlan": {
+      "additionalProperties": false,
+      "description": "One ndx-brainstem BrainstemTable: a row per BrainSTEM record, a column per field.",
+      "properties": {
+        "brainstem_models": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brainstem Models",
+          "type": "array"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/ExtensionColumnPlan"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "rows": {
+          "items": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                }
+              ]
+            },
+            "type": "object"
+          },
+          "title": "Rows",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "brainstem_models"
+      ],
+      "title": "ExtensionTablePlan",
+      "type": "object"
+    },
+    "ExternalRefCount": {
+      "additionalProperties": false,
+      "properties": {
+        "resolved": {
+          "title": "Resolved",
+          "type": "integer"
+        },
+        "total": {
+          "title": "Total",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "resolved"
+      ],
+      "title": "ExternalRefCount",
+      "type": "object"
+    },
+    "FieldMapping": {
+      "additionalProperties": false,
+      "description": "One intended NWB destination and the state of the value that goes there.",
+      "properties": {
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "nwb_path": {
+          "title": "Nwb Path",
+          "type": "string"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourcePointer"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "state": {
+          "enum": [
+            "present",
+            "missing",
+            "unknown",
+            "not_applicable",
+            "not_exported"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "value": {
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "rule_id",
+        "nwb_path",
+        "state"
+      ],
+      "title": "FieldMapping",
+      "type": "object"
+    },
+    "HerdRefPlan": {
+      "additionalProperties": false,
+      "description": "One HERD reference: an ontology term for a value of a core NWB object.",
+      "properties": {
+        "attribute": {
+          "title": "Attribute",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "entity_uri": {
+          "title": "Entity Uri",
+          "type": "string"
+        },
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "subject",
+            "electrode_group",
+            "ogen_site",
+            "device_model"
+          ],
+          "title": "Target",
+          "type": "string"
+        },
+        "target_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Name"
+        }
+      },
+      "required": [
+        "target",
+        "attribute",
+        "key",
+        "entity_id",
+        "entity_uri"
+      ],
+      "title": "HerdRefPlan",
+      "type": "object"
+    },
+    "LocalizationPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "spaces": {
+          "items": {
+            "$ref": "#/$defs/SpacePlan"
+          },
+          "title": "Spaces",
+          "type": "array"
+        },
+        "tables": {
+          "items": {
+            "$ref": "#/$defs/LocalizationTablePlan"
+          },
+          "title": "Tables",
+          "type": "array"
+        }
+      },
+      "title": "LocalizationPlan",
+      "type": "object"
+    },
+    "LocalizationRowPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "brain_region": {
+          "default": "",
+          "title": "Brain Region",
+          "type": "string"
+        },
+        "entity_row": {
+          "title": "Entity Row",
+          "type": "integer"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        },
+        "z": {
+          "title": "Z",
+          "type": "number"
+        }
+      },
+      "required": [
+        "entity_row",
+        "x",
+        "y",
+        "z"
+      ],
+      "title": "LocalizationRowPlan",
+      "type": "object"
+    },
+    "LocalizationTablePlan": {
+      "additionalProperties": false,
+      "description": "One ndx-anatomical-localization AnatomicalCoordinatesTable over rows of an ndx-brainstem table.",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "entity_table": {
+          "title": "Entity Table",
+          "type": "string"
+        },
+        "method": {
+          "title": "Method",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/LocalizationRowPlan"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "space": {
+          "title": "Space",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "method",
+        "space",
+        "entity_table"
+      ],
+      "title": "LocalizationTablePlan",
+      "type": "object"
+    },
+    "NWBFilePlan": {
+      "additionalProperties": false,
+      "properties": {
+        "data_collection": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data Collection"
+        },
+        "experiment_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Experiment Description"
+        },
+        "experimenter": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Experimenter",
+          "type": "array"
+        },
+        "file_create_date": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Create Date"
+        },
+        "identifier": {
+          "title": "Identifier",
+          "type": "string"
+        },
+        "institution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Institution"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keywords",
+          "type": "array"
+        },
+        "lab": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lab"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "pharmacology": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pharmacology"
+        },
+        "protocol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Protocol"
+        },
+        "related_publications": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Related Publications",
+          "type": "array"
+        },
+        "session_description": {
+          "title": "Session Description",
+          "type": "string"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "session_start_time": {
+          "format": "date-time",
+          "title": "Session Start Time",
+          "type": "string"
+        },
+        "slices": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Slices"
+        },
+        "source_script": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Script"
+        },
+        "source_script_file_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Script File Name"
+        },
+        "stimulus_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stimulus Notes"
+        },
+        "surgery": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surgery"
+        },
+        "timestamps_reference_time": {
+          "format": "date-time",
+          "title": "Timestamps Reference Time",
+          "type": "string"
+        },
+        "virus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Virus"
+        },
+        "was_generated_by": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Was Generated By",
+          "type": "array"
+        }
+      },
+      "required": [
+        "session_description",
+        "identifier",
+        "session_start_time",
+        "timestamps_reference_time"
+      ],
+      "title": "NWBFilePlan",
+      "type": "object"
+    },
+    "NwbPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "brainstem": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BrainstemExtensionPlan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "device_models": {
+          "items": {
+            "$ref": "#/$defs/DeviceModelPlan"
+          },
+          "title": "Device Models",
+          "type": "array"
+        },
+        "devices": {
+          "items": {
+            "$ref": "#/$defs/DevicePlan"
+          },
+          "title": "Devices",
+          "type": "array"
+        },
+        "electrode_groups": {
+          "items": {
+            "$ref": "#/$defs/ElectrodeGroupPlan"
+          },
+          "title": "Electrode Groups",
+          "type": "array"
+        },
+        "epochs": {
+          "$ref": "#/$defs/EpochsPlan"
+        },
+        "herd": {
+          "items": {
+            "$ref": "#/$defs/HerdRefPlan"
+          },
+          "title": "Herd",
+          "type": "array"
+        },
+        "localization": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LocalizationPlan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "nwbfile": {
+          "$ref": "#/$defs/NWBFilePlan"
+        },
+        "optogenetic_sites": {
+          "items": {
+            "$ref": "#/$defs/OptogeneticSitePlan"
+          },
+          "title": "Optogenetic Sites",
+          "type": "array"
+        },
+        "provenance": {
+          "additionalProperties": true,
+          "title": "Provenance",
+          "type": "object"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SubjectPlan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "nwbfile"
+      ],
+      "title": "NwbPlan",
+      "type": "object"
+    },
+    "OptogeneticSitePlan": {
+      "additionalProperties": false,
+      "properties": {
+        "brainstem_interface_id": {
+          "title": "Brainstem Interface Id",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "device": {
+          "title": "Device",
+          "type": "string"
+        },
+        "excitation_lambda": {
+          "title": "Excitation Lambda",
+          "type": "number"
+        },
+        "location": {
+          "title": "Location",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "device",
+        "excitation_lambda",
+        "location",
+        "brainstem_interface_id"
+      ],
+      "title": "OptogeneticSitePlan",
+      "type": "object"
+    },
+    "ProjectInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "custom_fields": {
+          "items": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "title": "Custom Fields",
+          "type": "array"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "publication_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Publication Ids",
+          "type": "array"
+        },
+        "repository_links": {
+          "items": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "title": "Repository Links",
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "ProjectInfo",
+      "type": "object"
+    },
+    "RawConversion": {
+      "additionalProperties": false,
+      "properties": {
+        "converter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Converter"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        },
+        "status": {
+          "default": "not_attempted",
+          "enum": [
+            "not_attempted",
+            "converted",
+            "failed",
+            "not_supported"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "title": "RawConversion",
+      "type": "object"
+    },
+    "RecordEntry": {
+      "additionalProperties": false,
+      "description": "A BrainSTEM record as exported (minus private bookkeeping fields) and its role in the unit.",
+      "properties": {
+        "fields": {
+          "additionalProperties": true,
+          "title": "Fields",
+          "type": "object"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "pk": {
+          "title": "Pk",
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "unmapped_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Fields",
+          "type": "array"
+        }
+      },
+      "required": [
+        "label",
+        "pk",
+        "roles",
+        "fields"
+      ],
+      "title": "RecordEntry",
+      "type": "object"
+    },
+    "RecordRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "RecordRef",
+      "type": "object"
+    },
+    "RunInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "dry_run": {
+          "title": "Dry Run",
+          "type": "boolean"
+        },
+        "options": {
+          "additionalProperties": true,
+          "title": "Options",
+          "type": "object"
+        },
+        "reproducible": {
+          "title": "Reproducible",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "created_at",
+        "reproducible",
+        "dry_run"
+      ],
+      "title": "RunInfo",
+      "type": "object"
+    },
+    "SchemaInfo": {
+      "additionalProperties": false,
+      "description": "The BrainSTEM JSON schemas the records use and where the embedded copies came from.",
+      "properties": {
+        "base_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Url"
+        },
+        "embedded": {
+          "title": "Embedded",
+          "type": "integer"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        },
+        "origin": {
+          "enum": [
+            "export",
+            "fetched",
+            "none"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "used": {
+          "title": "Used",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "used",
+        "embedded",
+        "origin"
+      ],
+      "title": "SchemaInfo",
+      "type": "object"
+    },
+    "SourceInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Counts",
+          "type": "object"
+        },
+        "exported_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exported At"
+        },
+        "format_version": {
+          "title": "Format Version",
+          "type": "string"
+        },
+        "host": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Host"
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "api",
+            "dict"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "lab_resources": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lab Resources"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Project Id"
+        },
+        "project_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Project Ids",
+          "type": "array"
+        },
+        "record_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Count"
+        },
+        "restricted": {
+          "additionalProperties": {
+            "items": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "title": "Restricted",
+          "type": "object"
+        },
+        "scope": {
+          "default": "project",
+          "enum": [
+            "project",
+            "session"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "session_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Id"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "unmapped_labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Labels",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "sha256",
+        "format_version"
+      ],
+      "title": "SourceInfo",
+      "type": "object"
+    },
+    "SourcePointer": {
+      "additionalProperties": false,
+      "description": "Where a value or a problem comes from: a BrainSTEM record and, optionally, a field path in it.",
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Path"
+        },
+        "pk": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pk"
+        }
+      },
+      "title": "SourcePointer",
+      "type": "object"
+    },
+    "SpacePlan": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "orientation": {
+          "title": "Orientation",
+          "type": "string"
+        },
+        "origin": {
+          "title": "Origin",
+          "type": "string"
+        },
+        "predefined": {
+          "anyOf": [
+            {
+              "const": "AllenCCFv3",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Predefined"
+        },
+        "space_name": {
+          "title": "Space Name",
+          "type": "string"
+        },
+        "units": {
+          "title": "Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "space_name",
+        "origin",
+        "units",
+        "orientation"
+      ],
+      "title": "SpacePlan",
+      "type": "object"
+    },
+    "SubjectPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "age": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Age"
+        },
+        "age__reference": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Age  Reference"
+        },
+        "date_of_birth": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date Of Birth"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "genotype": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Genotype"
+        },
+        "sex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sex"
+        },
+        "species": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Species"
+        },
+        "strain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strain"
+        },
+        "subject_id": {
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weight"
+        }
+      },
+      "required": [
+        "subject_id"
+      ],
+      "title": "SubjectPlan",
+      "type": "object"
+    },
+    "SubjectRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "label"
+      ],
+      "title": "SubjectRef",
+      "type": "object"
+    },
+    "Summary": {
+      "additionalProperties": false,
+      "properties": {
+        "failed": {
+          "default": 0,
+          "title": "Failed",
+          "type": "integer"
+        },
+        "planned": {
+          "default": 0,
+          "title": "Planned",
+          "type": "integer"
+        },
+        "sessions": {
+          "default": 0,
+          "title": "Sessions",
+          "type": "integer"
+        },
+        "unit_errors": {
+          "default": 0,
+          "title": "Unit Errors",
+          "type": "integer"
+        },
+        "units": {
+          "default": 0,
+          "title": "Units",
+          "type": "integer"
+        },
+        "up_to_date": {
+          "default": 0,
+          "title": "Up To Date",
+          "type": "integer"
+        },
+        "warnings_by_severity": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Warnings By Severity",
+          "type": "object"
+        },
+        "written": {
+          "default": 0,
+          "title": "Written",
+          "type": "integer"
+        }
+      },
+      "title": "Summary",
+      "type": "object"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "properties": {
+        "attribution": {
+          "items": {
+            "$ref": "#/$defs/Attribution"
+          },
+          "title": "Attribution",
+          "type": "array"
+        },
+        "data_sources": {
+          "items": {
+            "$ref": "#/$defs/DataSource"
+          },
+          "title": "Data Sources",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UnitFailure"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "mappings": {
+          "items": {
+            "$ref": "#/$defs/FieldMapping"
+          },
+          "title": "Mappings",
+          "type": "array"
+        },
+        "nwb": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NwbPlan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "output": {
+          "$ref": "#/$defs/UnitOutput"
+        },
+        "records": {
+          "items": {
+            "$ref": "#/$defs/RecordEntry"
+          },
+          "title": "Records",
+          "type": "array"
+        },
+        "session": {
+          "$ref": "#/$defs/RecordRef"
+        },
+        "specimen_sets": {
+          "items": {
+            "$ref": "#/$defs/RecordRef"
+          },
+          "title": "Specimen Sets",
+          "type": "array"
+        },
+        "status": {
+          "default": "planned",
+          "enum": [
+            "planned",
+            "written",
+            "up_to_date",
+            "failed",
+            "skipped"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SubjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "unit_id": {
+          "title": "Unit Id",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "$ref": "#/$defs/ConversionWarning"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "unit_id",
+        "session",
+        "output"
+      ],
+      "title": "Unit",
+      "type": "object"
+    },
+    "UnitErrorEntry": {
+      "additionalProperties": false,
+      "description": "A session (or one of its subjects) that produced no unit.",
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "session_id": {
+          "title": "Session Id",
+          "type": "string"
+        },
+        "session_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Session Name"
+        },
+        "subject_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject Id"
+        }
+      },
+      "required": [
+        "session_id",
+        "code",
+        "message"
+      ],
+      "title": "UnitErrorEntry",
+      "type": "object"
+    },
+    "UnitFailure": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "exception_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exception Type"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "UnitFailure",
+      "type": "object"
+    },
+    "UnitOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "herd_relative_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Herd Relative Path"
+        },
+        "nwb_identifier": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nwb Identifier"
+        },
+        "relative_path": {
+          "title": "Relative Path",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "relative_path"
+      ],
+      "title": "UnitOutput",
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/brainstem-org/brainstem-nwb/schemas/manifest-1.0.0.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "coverage": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Coverage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "data_model": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataModelInfo"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "export_mode": {
+      "default": "metadata-only",
+      "enum": [
+        "metadata-only",
+        "with-raw-data",
+        "partial-raw-data"
+      ],
+      "title": "Export Mode",
+      "type": "string"
+    },
+    "exporter": {
+      "$ref": "#/$defs/ExporterInfo"
+    },
+    "external_refs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ExternalRefCount"
+      },
+      "title": "External Refs",
+      "type": "object"
+    },
+    "manifest_schema_version": {
+      "title": "Manifest Schema Version",
+      "type": "string"
+    },
+    "projects": {
+      "items": {
+        "$ref": "#/$defs/ProjectInfo"
+      },
+      "title": "Projects",
+      "type": "array"
+    },
+    "run": {
+      "$ref": "#/$defs/RunInfo"
+    },
+    "schemas": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SchemaInfo"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "source": {
+      "$ref": "#/$defs/SourceInfo"
+    },
+    "summary": {
+      "$ref": "#/$defs/Summary"
+    },
+    "unit_errors": {
+      "items": {
+        "$ref": "#/$defs/UnitErrorEntry"
+      },
+      "title": "Unit Errors",
+      "type": "array"
+    },
+    "units": {
+      "items": {
+        "$ref": "#/$defs/Unit"
+      },
+      "title": "Units",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "$ref": "#/$defs/ConversionWarning"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "manifest_schema_version",
+    "exporter",
+    "run",
+    "source"
+  ],
+  "title": "brainstem-nwb conversion manifest 1.0.0",
+  "type": "object"
+}
