@@ -21,7 +21,7 @@ recordings, is designed and planned (see [docs/design/phase4-raw-data.md](docs/d
 
 ```bash
 pip install brainstem-nwb
-# until the first release is on PyPI:
+# the development version:
 pip install git+https://github.com/brainstem-org/brainstem-nwb
 ```
 

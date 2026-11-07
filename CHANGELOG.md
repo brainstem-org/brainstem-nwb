@@ -2,7 +2,7 @@
 
 All notable changes to brainstem-nwb are documented here. The project follows semantic versioning. The mapping version, which tracks changes to what is written to NWB files, is listed separately.
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-11-07)
 
 ### The BrainSTEM data model is read from the server (mapping version 1.3.0)
 

@@ -72,6 +72,13 @@ This rewrites `tests/fixtures/exports/*.json` and the example export.
 
 Implement `brainstem_nwb.raw.base.RawDataConverter` and register it. A converter in this repository registers itself in `raw/registry.py`; one in another package uses the `brainstem_nwb.raw_converters` entry point. See [docs/design/phase4-raw-data.md](docs/design/phase4-raw-data.md).
 
+## Releases
+
+1. Set the version in `src/brainstem_nwb/_version.py` and date the release in `CHANGELOG.md`.
+2. Commit, then tag and push: `git tag v0.1.0 && git push origin v0.1.0`.
+
+The `Release` workflow checks that the tag matches the version, runs the tests, builds, and publishes to PyPI with trusted publishing (no token).
+
 ## Pull requests
 
 - Keep each change focused, and include tests.
