@@ -1,0 +1,858 @@
+{
+ "export_info": {
+  "format_version": "2.2",
+  "exported_at": "2025-01-15T12:00:00.000000+00:00",
+  "project_id": null,
+  "project_ids": [
+   "40a77432-31bb-4dd7-be66-8a37836dc7a4",
+   "6bb813a5-9ece-4d48-9de6-7298005e523a"
+  ],
+  "scope": "session",
+  "session_id": "a05c199b-a9e2-4695-802a-084872bf514b",
+  "lab_resources": "Behavioral assays, data storages, setups, equipment, licenses, protocols, inventories and consumable stocks are included when the exporting user can read them and the project's records reference them. Those the records reference but the user cannot read are listed in export_info.restricted by name.",
+  "restricted": {
+   "personal_attributes.behavioralassay": [],
+   "personal_attributes.datastorage": [],
+   "personal_attributes.setup": [],
+   "modules.equipment": [],
+   "personal_attributes.license": [],
+   "personal_attributes.protocol": [],
+   "personal_attributes.inventory": [],
+   "modules.consumablestock": []
+  },
+  "record_count": 31,
+  "counts": {
+   "stem.project": 2,
+   "stem.subject": 1,
+   "stem.cohort": 0,
+   "stem.cohortsubject": 0,
+   "stem.breeding": 0,
+   "stem.session": 1,
+   "stem.sessiondatastorage": 0,
+   "stem.collection": 0,
+   "stem.collectionsession": 0,
+   "modules.dataacquisition": 1,
+   "modules.dataacquisitioninterface": 1,
+   "modules.manipulation": 1,
+   "modules.manipulationinterface": 0,
+   "modules.behavior": 1,
+   "stem.epoch": 2,
+   "modules.procedure": 1,
+   "modules.procedureinterface": 1,
+   "modules.procedureepisode": 0,
+   "modules.episodepersonnel": 0,
+   "modules.procedurestage": 0,
+   "modules.procedurestagetarget": 0,
+   "modules.subjectlog": 1,
+   "modules.moduleslogentry": 1,
+   "modules.startendmoduleslogentry": 0,
+   "modules.procedurelog": 0,
+   "stem.specimenset": 0,
+   "stem.specimen": 0,
+   "modules.specimenprocedure": 0,
+   "modules.specimenproceduretarget": 0,
+   "modules.specimenlog": 0,
+   "modules.experimentalinterface": 1,
+   "modules.materialusage": 0,
+   "modules.materialusagetarget": 0,
+   "personal_attributes.behavioralassay": 1,
+   "personal_attributes.datastorage": 0,
+   "personal_attributes.setup": 1,
+   "modules.equipment": 1,
+   "personal_attributes.license": 0,
+   "personal_attributes.protocol": 0,
+   "personal_attributes.protocolallowedsubtype": 0,
+   "personal_attributes.inventory": 0,
+   "modules.consumablestock": 0,
+   "dissemination.journal": 1,
+   "dissemination.publication": 1,
+   "resources.consumable": 0,
+   "resources.hardwaredevice": 1,
+   "resources.supplier": 1,
+   "taxonomies.anatomicalreference": 1,
+   "taxonomies.anatomicalregion": 1,
+   "taxonomies.behavioralcategory": 2,
+   "taxonomies.behavioralparadigm": 1,
+   "taxonomies.coordinatetransform": 0,
+   "taxonomies.regulatoryauthority": 0,
+   "taxonomies.setuptype": 0,
+   "taxonomies.species": 2,
+   "taxonomies.strain": 1,
+   "users.user": 1
+  }
+ },
+ "records": {
+  "stem.project": [
+   {
+    "model": "stem.project",
+    "pk": "40a77432-31bb-4dd7-be66-8a37836dc7a4",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.713Z",
+     "updated_at": "2026-11-08T08:09:02.713Z",
+     "user": 3,
+     "name": "Contract project B",
+     "description": "Shares the session.",
+     "extra_content_json": null,
+     "repository_links_json": null,
+     "name_used_in_storage": null,
+     "is_public": false,
+     "publications": [],
+     "tags": []
+    }
+   },
+   {
+    "model": "stem.project",
+    "pk": "6bb813a5-9ece-4d48-9de6-7298005e523a",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.698Z",
+     "updated_at": "2026-11-08T08:09:02.698Z",
+     "user": 3,
+     "name": "Contract project",
+     "description": "<p>Server contract fixture.</p>",
+     "extra_content_json": null,
+     "repository_links_json": null,
+     "name_used_in_storage": null,
+     "is_public": false,
+     "publications": [
+      "fae871f2-b78e-4499-8625-7740b91afbbb"
+     ],
+     "tags": [
+      "contract"
+     ]
+    }
+   }
+  ],
+  "stem.subject": [
+   {
+    "model": "stem.subject",
+    "pk": "18db15fe-797c-484b-90f3-fd39aa424656",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.729Z",
+     "updated_at": "2026-11-08T08:09:02.729Z",
+     "user": 3,
+     "name": "ContractMouse",
+     "description": null,
+     "species": "143871c9-bddb-4b74-a1ed-94175916e9a2",
+     "strain": "b5adcb64-50ab-419d-96b8-0758a60f777a",
+     "sex": "F",
+     "genetic_line": "",
+     "genotype": "",
+     "subject_identifier": "",
+     "supplier": null,
+     "breeding": null,
+     "birth_date": "2024-01-02",
+     "death_date": null,
+     "status": "active",
+     "extra_content_json": null,
+     "name_used_in_storage": null,
+     "projects": [
+      "6bb813a5-9ece-4d48-9de6-7298005e523a"
+     ],
+     "licenses": [],
+     "tags": []
+    }
+   }
+  ],
+  "stem.cohort": [],
+  "stem.cohortsubject": [],
+  "stem.breeding": [],
+  "stem.session": [
+   {
+    "model": "stem.session",
+    "pk": "a05c199b-a9e2-4695-802a-084872bf514b",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.732Z",
+     "updated_at": "2026-11-08T08:09:02.732Z",
+     "user": 3,
+     "status": "performed",
+     "name": "Contract session",
+     "description": "<p>Recorded.</p>",
+     "date_time": "2024-04-01T10:00:00.123Z",
+     "extra_content_json": null,
+     "repository_links_json": null,
+     "name_used_in_storage": null,
+     "session_type": "subject",
+     "projects": [
+      "40a77432-31bb-4dd7-be66-8a37836dc7a4",
+      "6bb813a5-9ece-4d48-9de6-7298005e523a"
+     ],
+     "datastorage": [],
+     "subjects": [
+      "18db15fe-797c-484b-90f3-fd39aa424656"
+     ],
+     "specimen_sets": [],
+     "tags": []
+    }
+   }
+  ],
+  "stem.sessiondatastorage": [],
+  "stem.collection": [],
+  "stem.collectionsession": [],
+  "modules.dataacquisition": [
+   {
+    "model": "modules.dataacquisition",
+    "pk": "12453d31-ebc9-4766-bffa-65e8fd22e81b",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.765Z",
+     "updated_at": "2026-11-08T08:09:02.765Z",
+     "user": 3,
+     "notes": null,
+     "type": "ExtracellularEphys",
+     "type_json": {
+      "fileName": "contract.dat",
+      "nChannels": 32,
+      "sr": {
+       "value": 20000,
+       "unit": "Hz"
+      },
+      "electrodeGroups": [
+       {
+        "label": "shank1",
+        "channels": [
+         0,
+         1,
+         2,
+         3,
+         4,
+         5,
+         6,
+         7,
+         8,
+         9,
+         10,
+         11,
+         12,
+         13,
+         14,
+         15,
+         16,
+         17,
+         18,
+         19,
+         20,
+         21,
+         22,
+         23,
+         24,
+         25,
+         26,
+         27,
+         28,
+         29,
+         30,
+         31
+        ]
+       }
+      ]
+     },
+     "type_schema_version": "",
+     "session": "a05c199b-a9e2-4695-802a-084872bf514b",
+     "image": "",
+     "order": 0,
+     "equipment": [
+      "048dc6d3-bf46-4644-b566-01743e013709"
+     ],
+     "interfaces": [
+      "b7eaca39-0f2d-43df-bde0-0a2bfefe993d"
+     ]
+    }
+   }
+  ],
+  "modules.dataacquisitioninterface": [
+   {
+    "model": "modules.dataacquisitioninterface",
+    "pk": 1,
+    "fields": {
+     "dataacquisition": "12453d31-ebc9-4766-bffa-65e8fd22e81b",
+     "interface": "b7eaca39-0f2d-43df-bde0-0a2bfefe993d",
+     "order": 0,
+     "metadata_json": null,
+     "metadata_schema_version": "",
+     "created_at": "2026-11-08T08:09:02.766Z",
+     "updated_at": "2026-11-08T08:09:02.766Z"
+    }
+   }
+  ],
+  "modules.manipulation": [
+   {
+    "model": "modules.manipulation",
+    "pk": "c32f0b72-fa0d-4b1e-a7da-88726bd1ec50",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.767Z",
+     "updated_at": "2026-11-08T08:09:02.767Z",
+     "user": 3,
+     "type": "ElectricalStimulation",
+     "notes": null,
+     "type_json": [
+      {
+       "amplitude": {
+        "value": 10,
+        "unit": "µA"
+       }
+      }
+     ],
+     "type_schema_version": "",
+     "session": "a05c199b-a9e2-4695-802a-084872bf514b",
+     "order": 0,
+     "equipment": [],
+     "interfaces": []
+    }
+   }
+  ],
+  "modules.manipulationinterface": [],
+  "modules.behavior": [
+   {
+    "model": "modules.behavior",
+    "pk": "57ff171c-b489-4d2f-86ed-40176d692c1e",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.773Z",
+     "updated_at": "2026-11-08T08:09:02.773Z",
+     "user": 3,
+     "session": "a05c199b-a9e2-4695-802a-084872bf514b",
+     "setup": "f57eaea8-c390-42ed-bd3b-f782f3774eb7",
+     "behavioralassay": "e5854a1b-31c8-43d6-9e41-16e805592a20",
+     "notes": null,
+     "order": 0,
+     "subjects": [
+      "18db15fe-797c-484b-90f3-fd39aa424656"
+     ]
+    }
+   }
+  ],
+  "stem.epoch": [
+   {
+    "model": "stem.epoch",
+    "pk": "d45f5770-4305-437b-8713-d0cac8b6209c",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.774Z",
+     "updated_at": "2026-11-08T08:09:02.774Z",
+     "user": 3,
+     "name": "run",
+     "start": "00:00:00",
+     "end": "00:30:00.500000",
+     "order": 0,
+     "session": "a05c199b-a9e2-4695-802a-084872bf514b",
+     "behavior": "57ff171c-b489-4d2f-86ed-40176d692c1e",
+     "manipulations": [
+      "c32f0b72-fa0d-4b1e-a7da-88726bd1ec50"
+     ],
+     "dataacquisitions": [
+      "12453d31-ebc9-4766-bffa-65e8fd22e81b"
+     ]
+    }
+   },
+   {
+    "model": "stem.epoch",
+    "pk": "f135e963-29c1-453b-b9f7-1954cc9027cb",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.776Z",
+     "updated_at": "2026-11-08T08:09:02.776Z",
+     "user": 3,
+     "name": "late",
+     "start": "1 02:00:00",
+     "end": "1 03:00:00",
+     "order": 0,
+     "session": "a05c199b-a9e2-4695-802a-084872bf514b",
+     "behavior": null,
+     "manipulations": [],
+     "dataacquisitions": []
+    }
+   }
+  ],
+  "modules.procedure": [
+   {
+    "model": "modules.procedure",
+    "pk": "e7d7ecd2-739a-42a5-ab23-2cf1572b737f",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.735Z",
+     "updated_at": "2026-11-08T08:09:02.735Z",
+     "user": 3,
+     "status": "performed",
+     "notes": null,
+     "date_time": "2024-03-01T11:00:00Z",
+     "type_json": {
+      "duraHandling": "dura_removed"
+     },
+     "type_schema_version": "",
+     "type": "SiliconProbeImplant",
+     "coordinates": "Stereotaxic_BregmaBrainSurface",
+     "coordinates_json": {
+      "apCoordinate": {
+       "value": -2.0,
+       "unit": "mm"
+      },
+      "mlCoordinate": {
+       "value": 1.5,
+       "unit": "mm"
+      },
+      "depth": {
+       "value": 1.0,
+       "unit": "mm"
+      }
+     },
+     "coordinates_schema_version": "",
+     "subject": "18db15fe-797c-484b-90f3-fd39aa424656",
+     "anatomical_reference": null,
+     "coordinate_transform": null,
+     "protocol": null,
+     "procedure_episode": null,
+     "performed_by": 3,
+     "target_regions": [
+      "92106237-4906-4e56-8c18-afe9bee4f688"
+     ],
+     "licenses": [],
+     "equipment": [],
+     "interfaces": [
+      "b7eaca39-0f2d-43df-bde0-0a2bfefe993d"
+     ]
+    }
+   }
+  ],
+  "modules.procedureinterface": [
+   {
+    "model": "modules.procedureinterface",
+    "pk": 1,
+    "fields": {
+     "procedure": "e7d7ecd2-739a-42a5-ab23-2cf1572b737f",
+     "interface": "b7eaca39-0f2d-43df-bde0-0a2bfefe993d",
+     "relationship": "created",
+     "notes": null
+    }
+   }
+  ],
+  "modules.procedureepisode": [],
+  "modules.episodepersonnel": [],
+  "modules.procedurestage": [],
+  "modules.procedurestagetarget": [],
+  "modules.subjectlog": [
+   {
+    "model": "modules.subjectlog",
+    "pk": "2615d911-7cc9-4dce-8fb8-17f9f12bd2f1",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.761Z",
+     "updated_at": "2026-11-08T08:09:02.761Z",
+     "user": 3,
+     "description": null,
+     "type": "Weighing",
+     "subject": "18db15fe-797c-484b-90f3-fd39aa424656",
+     "protocol": null,
+     "next_check_due_at": null
+    }
+   }
+  ],
+  "modules.moduleslogentry": [
+   {
+    "model": "modules.moduleslogentry",
+    "pk": "c3cbf666-50d7-4d2b-9629-a9f0dd21df42",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.762Z",
+     "updated_at": "2026-11-08T08:09:02.762Z",
+     "user": 3,
+     "type_json": {
+      "weight": {
+       "value": 25.3,
+       "unit": "g"
+      }
+     },
+     "type_schema_version": "",
+     "notes": null,
+     "content_type": "modules.subjectlog",
+     "object_id": "2615d911-7cc9-4dce-8fb8-17f9f12bd2f1",
+     "procedure_episode": null,
+     "phase": null,
+     "performedBy": 3,
+     "date_time": "2024-03-31T09:00:00Z"
+    }
+   }
+  ],
+  "modules.startendmoduleslogentry": [],
+  "modules.procedurelog": [],
+  "stem.specimenset": [],
+  "stem.specimen": [],
+  "modules.specimenprocedure": [],
+  "modules.specimenproceduretarget": [],
+  "modules.specimenlog": [],
+  "modules.experimentalinterface": [
+   {
+    "model": "modules.experimentalinterface",
+    "pk": "b7eaca39-0f2d-43df-bde0-0a2bfefe993d",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.749Z",
+     "updated_at": "2026-11-08T08:09:02.753Z",
+     "user": 3,
+     "name": "ContractMouse | Silicon probe implant",
+     "notes": null,
+     "type": "SiliconProbe",
+     "persistence": "chronic",
+     "coordinates": "Stereotaxic_BregmaBrainSurface",
+     "coordinates_json": {
+      "apCoordinate": {
+       "value": -2.0,
+       "unit": "mm"
+      },
+      "mlCoordinate": {
+       "value": 1.5,
+       "unit": "mm"
+      },
+      "depth": {
+       "value": 1.0,
+       "unit": "mm"
+      }
+     },
+     "coordinates_schema_version": "",
+     "type_json": {
+      "deviceIdentifier": "SN-1"
+     },
+     "type_schema_version": "",
+     "subject": "18db15fe-797c-484b-90f3-fd39aa424656",
+     "specimen_set": null,
+     "source_material_usage": null,
+     "installed_at": "2024-03-01T11:30:00Z",
+     "removed_at": null,
+     "target_specimens": [],
+     "equipment": [],
+     "target_regions": [
+      "92106237-4906-4e56-8c18-afe9bee4f688"
+     ]
+    }
+   }
+  ],
+  "modules.materialusage": [],
+  "modules.materialusagetarget": [],
+  "personal_attributes.behavioralassay": [
+   {
+    "model": "personal_attributes.behavioralassay",
+    "pk": "e5854a1b-31c8-43d6-9e41-16e805592a20",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.771Z",
+     "updated_at": "2026-11-08T08:09:02.771Z",
+     "user": 3,
+     "name": "Contract assay",
+     "description": null,
+     "setup_type": null,
+     "behavioral_paradigm": "941378d9-7377-4a9c-98e3-8f10f5e9d6a8",
+     "is_public": false,
+     "licenses": []
+    }
+   }
+  ],
+  "personal_attributes.datastorage": [],
+  "personal_attributes.setup": [
+   {
+    "model": "personal_attributes.setup",
+    "pk": "f57eaea8-c390-42ed-bd3b-f782f3774eb7",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.762Z",
+     "updated_at": "2026-11-08T08:09:02.762Z",
+     "user": 3,
+     "name": "Contract rig",
+     "description": null,
+     "location": null,
+     "setup_type": null,
+     "image": "",
+     "is_public": false,
+     "specifications": null
+    }
+   }
+  ],
+  "modules.equipment": [
+   {
+    "model": "modules.equipment",
+    "pk": "048dc6d3-bf46-4644-b566-01743e013709",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.765Z",
+     "updated_at": "2026-11-08T08:09:02.765Z",
+     "user": 3,
+     "name": "Contract amplifier",
+     "type": "Amplifier",
+     "notes": null,
+     "setup": "f57eaea8-c390-42ed-bd3b-f782f3774eb7",
+     "date_time": null,
+     "consumable": null,
+     "hardwaredevice": "6282a9ca-5958-4031-bbb5-076fafc28554",
+     "type_json": null,
+     "type_schema_version": "",
+     "coordinates": "External_XYZ_Euler",
+     "coordinates_json": null,
+     "coordinates_schema_version": ""
+    }
+   }
+  ],
+  "personal_attributes.license": [],
+  "personal_attributes.protocol": [],
+  "personal_attributes.protocolallowedsubtype": [],
+  "personal_attributes.inventory": [],
+  "modules.consumablestock": [],
+  "dissemination.journal": [
+   {
+    "model": "dissemination.journal",
+    "pk": "e68321f8-f2d6-4e14-b5fa-0fe1980bb03e",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.717Z",
+     "updated_at": "2026-11-08T08:09:02.717Z",
+     "user": 3,
+     "description": null,
+     "website": null,
+     "name": "Contract Journal"
+    }
+   }
+  ],
+  "dissemination.publication": [
+   {
+    "model": "dissemination.publication",
+    "pk": "fae871f2-b78e-4499-8625-7740b91afbbb",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.719Z",
+     "updated_at": "2026-11-08T08:09:02.719Z",
+     "user": 3,
+     "authors": "",
+     "journal": "e68321f8-f2d6-4e14-b5fa-0fe1980bb03e",
+     "abstract": "",
+     "doi": "10.0000/contract.1",
+     "volume": "",
+     "publication_url": "",
+     "pdf_url": "",
+     "publication_date": "2025-01-01",
+     "title": "Contract publication"
+    }
+   }
+  ],
+  "resources.consumable": [],
+  "resources.hardwaredevice": [
+   {
+    "model": "resources.hardwaredevice",
+    "pk": "6282a9ca-5958-4031-bbb5-076fafc28554",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.723Z",
+     "updated_at": "2026-11-08T08:09:02.723Z",
+     "user": 3,
+     "rrid": null,
+     "external_identifiers": [],
+     "description": "",
+     "supplier": "50d8bda1-2784-490e-b6b8-73e0fb4a3c46",
+     "type": "Amplifier",
+     "type_json": {
+      "productId": "C-1"
+     },
+     "type_schema_version": null,
+     "name": "Contract headstage"
+    }
+   }
+  ],
+  "resources.supplier": [
+   {
+    "model": "resources.supplier",
+    "pk": "50d8bda1-2784-490e-b6b8-73e0fb4a3c46",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.721Z",
+     "updated_at": "2026-11-08T08:09:02.721Z",
+     "user": 3,
+     "description": "",
+     "website": "",
+     "name": "Contract Supplier"
+    }
+   }
+  ],
+  "taxonomies.anatomicalreference": [
+   {
+    "model": "taxonomies.anatomicalreference",
+    "pk": "ecc716ec-5b75-4c97-b2dd-a7297fe92205",
+    "fields": {
+     "code": "allen_mouse_ccfv3_2017",
+     "name": "Allen Mouse Common Coordinate Framework",
+     "version": "CCFv3 2017",
+     "species": "143871c9-bddb-4b74-a1ed-94175916e9a2",
+     "organ": "brain",
+     "region_atlas_code": "AIA",
+     "coordinate_space_identifier": "Allen CCFv3 PIR",
+     "axes_orientation": [
+      {
+       "axis": "x",
+       "positive": "posterior"
+      },
+      {
+       "axis": "y",
+       "positive": "inferior"
+      },
+      {
+       "axis": "z",
+       "positive": "right"
+      }
+     ],
+     "origin_description": "Anterior-superior-left corner of the Allen CCFv3 reference volume.",
+     "native_unit": "mm",
+     "shape": [
+      264,
+      160,
+      228
+     ],
+     "resolution_um": [
+      50,
+      50,
+      50
+     ],
+     "source": "Allen Institute for Brain Science",
+     "homepage": "https://mouse.brain-map.org/static/atlas",
+     "citation": "Allen Mouse Brain Common Coordinate Framework, version 3 (2017).",
+     "license_name": "Allen Institute Terms of Use",
+     "license_url": "https://alleninstitute.org/legal/terms-use/",
+     "asset_manifest_url": "https://public-images.brainstem.org/atlases/allen_mouse_ccfv3_2017/50um/v4/manifest.json",
+     "visualization_status": "available",
+     "is_active": true,
+     "created_at": "2026-11-08T08:08:23.442Z",
+     "updated_at": "2026-11-08T08:08:23.442Z"
+    }
+   }
+  ],
+  "taxonomies.anatomicalregion": [
+   {
+    "model": "taxonomies.anatomicalregion",
+    "pk": "92106237-4906-4e56-8c18-afe9bee4f688",
+    "fields": {
+     "created_at": "2026-11-08T08:09:02.724Z",
+     "updated_at": "2026-11-08T08:09:02.724Z",
+     "user": 3,
+     "name": "Field CA1",
+     "acronym": "CA1",
+     "description": null,
+     "reference": "ecc716ec-5b75-4c97-b2dd-a7297fe92205",
+     "region_id": null,
+     "parent_acronym": "",
+     "graph_order": null,
+     "is_obsolete": false,
+     "replaced_by": null
+    }
+   }
+  ],
+  "taxonomies.behavioralcategory": [
+   {
+    "model": "taxonomies.behavioralcategory",
+    "pk": "6a133f29-881b-4c46-9bbe-a81714c29f08",
+    "fields": {
+     "created_at": "2026-11-08T08:07:11.270Z",
+     "updated_at": "2026-11-08T08:07:11.270Z",
+     "user": 1,
+     "description": "Paradigms assessing sensory processing and perception",
+     "parent": null,
+     "name": "Sensory Function"
+    }
+   },
+   {
+    "model": "taxonomies.behavioralcategory",
+    "pk": "c44f360d-7a27-4765-8b1c-37e895b2fb6e",
+    "fields": {
+     "created_at": "2026-11-08T08:07:11.278Z",
+     "updated_at": "2026-11-08T08:07:11.278Z",
+     "user": 1,
+     "description": "Hearing and auditory processing",
+     "parent": "6a133f29-881b-4c46-9bbe-a81714c29f08",
+     "name": "Auditory"
+    }
+   }
+  ],
+  "taxonomies.behavioralparadigm": [
+   {
+    "model": "taxonomies.behavioralparadigm",
+    "pk": "941378d9-7377-4a9c-98e3-8f10f5e9d6a8",
+    "fields": {
+     "created_at": "2026-11-08T08:07:11.359Z",
+     "updated_at": "2026-11-08T08:07:11.359Z",
+     "user": 1,
+     "rrid": null,
+     "external_identifiers": [],
+     "category": "c44f360d-7a27-4765-8b1c-37e895b2fb6e",
+     "description": "Whole-body startle response to sudden loud sound. Baseline measure for PPI.",
+     "original_publication": "",
+     "reference_url": "",
+     "name": "Acoustic Startle Response",
+     "species": [
+      "143871c9-bddb-4b74-a1ed-94175916e9a2",
+      "ca60028f-ffab-4766-8438-00a96f1f8152"
+     ]
+    }
+   }
+  ],
+  "taxonomies.coordinatetransform": [],
+  "taxonomies.regulatoryauthority": [],
+  "taxonomies.setuptype": [],
+  "taxonomies.species": [
+   {
+    "model": "taxonomies.species",
+    "pk": "143871c9-bddb-4b74-a1ed-94175916e9a2",
+    "fields": {
+     "created_at": "2026-11-08T08:07:09.698Z",
+     "updated_at": "2026-11-08T08:07:09.698Z",
+     "user": 1,
+     "rrid": null,
+     "external_identifiers": [
+      {
+       "source": "NCBI",
+       "id": "10090",
+       "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10090"
+      }
+     ],
+     "popular_name": "Mouse",
+     "appearance": "Small rodent with a pointed snout, small rounded ears, and a long naked or almost hairless tail. Coat color varies from light brown to black, but albino and other variations exist in laboratory strains.",
+     "description": "The house mouse (Mus musculus) is a small mammal of the order Rodentia, characteristically having a pointed snout, large rounded ears, and a long naked or almost hairless tail. It is one of the most abundant species of the genus Mus.",
+     "name": "Mus musculus"
+    }
+   },
+   {
+    "model": "taxonomies.species",
+    "pk": "ca60028f-ffab-4766-8438-00a96f1f8152",
+    "fields": {
+     "created_at": "2026-11-08T08:07:09.699Z",
+     "updated_at": "2026-11-08T08:07:09.699Z",
+     "user": 1,
+     "rrid": null,
+     "external_identifiers": [
+      {
+       "source": "NCBI",
+       "id": "10116",
+       "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10116"
+      }
+     ],
+     "popular_name": "Rat",
+     "appearance": "Medium-sized rodent with a brown or grey coat (wild type) or white (albino laboratory strains). Has a long tail, prominent ears, and a pointed muzzle.",
+     "description": "The brown rat (Rattus norvegicus), also known as the common rat, street rat, sewer rat, wharf rat, Hanover rat, Norway rat, Norwegian rat and Parisian rat, is a widespread species of common rat. One of the largest muroids, it is a brown or grey rodent with a head and body length of up to 28 cm (11 in) long, and a tail slightly shorter than that.",
+     "name": "Rattus norvegicus"
+    }
+   }
+  ],
+  "taxonomies.strain": [
+   {
+    "model": "taxonomies.strain",
+    "pk": "b5adcb64-50ab-419d-96b8-0758a60f777a",
+    "fields": {
+     "created_at": "2026-11-08T08:07:09.777Z",
+     "updated_at": "2026-11-08T08:07:09.777Z",
+     "user": 1,
+     "rrid": null,
+     "external_identifiers": [
+      {
+       "source": "RIKEN BRC",
+       "id": "RBRC06364",
+       "url": "https://knowledge.brc.riken.jp/resource/animal/card?brc_no=RBRC06364"
+      }
+     ],
+     "popular_name": "Disc1-L100P",
+     "appearance": "",
+     "description": "The B6(D2)-Disc1<Rgsc1390>/Rod line carries the ENU-induced Disc1 L100P mutation and is distributed by RIKEN BRC as RBRC06364. It is used to investigate how altered Disc1 function affects brain development and behavior.",
+     "species": "143871c9-bddb-4b74-a1ed-94175916e9a2",
+     "breeding": "I",
+     "name": "B6(D2)-Disc1<Rgsc1390>/Rod"
+    }
+   }
+  ],
+  "users.user": [
+   {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+     "first_name": "Contract",
+     "last_name": "Export"
+    }
+   }
+  ]
+ }
+}

@@ -2,6 +2,14 @@
 
 All notable changes to brainstem-nwb are documented here. The project follows semantic versioning. The mapping version, which tracks changes to what is written to NWB files, is listed separately.
 
+## 0.1.1 (unreleased)
+
+### Export format 2.2
+
+- Reads BrainSTEM project and session exports in format 2.2 without the `EXPORT_MINOR_NEWER` notice. In 2.2, data acquisitions and manipulations link to biology through their experimental interfaces only, which is how 0.1.0 already reads 2.1 exports, so the files written are unchanged (mapping version 1.3.0).
+- The contract tests run against server-built exports in formats 2.1 and 2.2 (`tests/fixtures/exports/server_contract_2_2*.json`).
+- The proposal to carry JSON schemas in the export is renumbered to a future 2.x format, since 2.2 is the interface-only format.
+
 ## 0.1.0 (2026-11-07)
 
 ### The BrainSTEM data model is read from the server (mapping version 1.3.0)

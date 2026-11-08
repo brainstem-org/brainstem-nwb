@@ -1,4 +1,4 @@
-# Proposal: JSON schemas in the project export (format 2.2)
+# Proposal: JSON schemas in the project export (a future 2.x format)
 
 **Status:** proposal, deferred. BrainSTEM now publishes every schema version at a stable URL (`/schemas/<Family>/<Type>/<version>.json`, with the URL as `$id`). brainstem-nwb uses that: it writes each schema's URL into the file and, with `--embed-schemas`, fetches and embeds the schemas itself (see [extensions](../extensions.md#schemas)). Carrying the schemas in the export, as proposed below, would make embedding work offline too.
 
@@ -16,7 +16,7 @@ A new top-level key `schemas`, next to `export_info` and `records`:
 
 ```json
 {
-  "export_info": {"format_version": "2.2", "...": "..."},
+  "export_info": {"format_version": "2.x", "...": "..."},
   "records": {"...": []},
   "schemas": {
     "Procedure/VirusInjection@3.0.0": {"$schema": "http://json-schema.org/draft-07/schema#", "schemaVersion": "3.0.0", "...": "..."},
@@ -101,4 +101,4 @@ Each schema is a few KB, and an export includes only the distinct (family, type,
 
 - Reads `payload["schemas"]`. This is already implemented: `ProjectExport.schemas`.
 - With `--extension brainstem`, writes the schemas named by the file's `details_schema` values into the `schemas` table (`BrainstemSchemaTable`: `schema_id`, `schema_url`, `schema_json`; `coordinates_schema` values are listed too).
-- When 2.2 is released: raises `KNOWN_EXPORT_MINOR` to 2, names coordinate schemas in `details_schema` too, and reports keys listed in `schemas_missing` as a warning.
+- When the server releases it (as the next minor format after 2.2, which links recordings to biology through interfaces only and carries no schemas): raises `KNOWN_EXPORT_MINOR` to that version, names coordinate schemas in `details_schema` too, and reports keys listed in `schemas_missing` as a warning.

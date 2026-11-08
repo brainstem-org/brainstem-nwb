@@ -21,7 +21,7 @@ The installed API tools predate project exports. You have two options:
 
 ## "BrainSTEM export failed: … needs contributor access"
 
-The server uses export format 2.0, which requires permission to change the project. Servers with format 2.1 need only read access. Ask a project manager for contributor access, or for the export file.
+The server uses export format 2.0, which requires permission to change the project. Servers with format 2.1 or later need only read access. Ask a project manager for contributor access, or for the export file.
 
 ## "fetching a single session needs … BrainstemClient.export_session"
 
@@ -48,7 +48,7 @@ DANDI needs the subject's age. Add the birth date in BrainSTEM: the age is compu
 
 ## `location` is "unknown" for electrode groups
 
-No target region is recorded for the probe, or for the procedure that implanted it, or the export is format 2.0, which does not include region records. Add the target region in BrainSTEM, or export again from a server with format 2.1.
+No target region is recorded for the probe, or for the procedure that implanted it, or the export is format 2.0, which does not include region records. Add the target region in BrainSTEM, or export again from a server with format 2.1 or later.
 
 ## A field I expected is missing
 

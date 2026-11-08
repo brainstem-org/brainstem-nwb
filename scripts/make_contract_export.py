@@ -3,7 +3,7 @@ Produce a contract export with the BrainSTEM server's own export builder.
 
 Creates a small synthetic project in a fresh, throwaway SQLite database using the server's
 models, exports it with ``stem.services.project_export.build_project_export`` and writes the
-JSON. The committed result (tests/fixtures/exports/server_contract_2_1.json) proves the exporter
+JSON. The committed results (tests/fixtures/exports/server_contract_<version>*.json) prove the exporter
 reads what the server really writes (value encodings, link lists, labels).
 
 Run with the BrainSTEM server's Python environment, against a checkout of the branch with the
@@ -11,7 +11,8 @@ project export (never against a real database: the database file is created in a
 directory)::
 
     /path/to/brainstem/.venv/bin/python scripts/make_contract_export.py /path/to/brainstem-checkout \
-        tests/fixtures/exports/server_contract_2_1.json
+        tests/fixtures/exports/server_contract_2_2.json \
+        --session-output tests/fixtures/exports/server_contract_2_2_session.json
 """
 
 import argparse

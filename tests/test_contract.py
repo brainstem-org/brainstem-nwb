@@ -1,10 +1,11 @@
 """
 The exporter reads what the BrainSTEM server really writes.
 
-server_contract_2_1.json (project export) and server_contract_2_1_session.json (session export of a
-session in two projects) were produced by the server's own ``build_project_export`` from a small
-synthetic project (scripts/make_contract_export.py), so their value encodings, link lists and
-labels are the server's, not our test builder's.
+server_contract_<version>.json (project export) and server_contract_<version>_session.json (session
+export of a session in two projects) were produced by the server's own ``build_project_export`` from a
+small synthetic project (scripts/make_contract_export.py), so their value encodings, link lists and
+labels are the server's, not our test builder's. 2.2 is what the server writes now; 2.1 files have the
+same structure and must keep working.
 """
 
 import json
@@ -20,11 +21,12 @@ from brainstem_nwb.store.inventory import get_inventory
 from .conftest import EXPORTS
 from .fixtures.builder import EXPORTED_USER_FIELDS, INTERNAL_FIELDS
 
-PROJECT = EXPORTS / "server_contract_2_1.json"
-SESSION = EXPORTS / "server_contract_2_1_session.json"
+VERSIONS = ["2_1", "2_2"]
+CONTRACTS = [(EXPORTS / f"server_contract_{v}.json", EXPORTS / f"server_contract_{v}_session.json") for v in VERSIONS]
 
 
-@pytest.fixture(scope="module", params=[PROJECT, SESSION], ids=["project", "session"])
+@pytest.fixture(scope="module", params=[path for pair in CONTRACTS for path in pair],
+                ids=[f"{v}-{scope}" for v in VERSIONS for scope in ("project", "session")])
 def contract(request):
     return load_export(request.param)
 
@@ -44,7 +46,7 @@ def test_labels_and_fields_match_the_server_data_model(contract):
 
 
 def test_no_personal_data_beyond_names():
-    for path in (PROJECT, SESSION):
+    for path in (path for pair in CONTRACTS for path in pair):
         text = path.read_text(encoding="utf-8")
         assert "@" not in text
         for user in json.loads(text)["records"]["users.user"]:
@@ -67,8 +69,9 @@ def test_server_encodings(contract):
     assert set(store.external_refs()) <= {"stem.project"}
 
 
-def test_scope_keys():
-    project, session = load_export(PROJECT), load_export(SESSION)
+@pytest.mark.parametrize("pair", CONTRACTS, ids=VERSIONS)
+def test_scope_keys(pair):
+    project, session = load_export(pair[0]), load_export(pair[1])
     assert (project.scope, project.session_id, len(project.project_ids)) == ("project", None, 1)
     assert project.project_ids == [project.project_id]
     assert (session.scope, session.project_id, len(session.project_ids)) == ("session", None, 2)
@@ -78,6 +81,7 @@ def test_scope_keys():
 def test_contract_exports_cleanly(tmp_path, contract):
     result = export_project(export=contract, output_dir=tmp_path)
     assert result.exit_code == 0, [w.message for u in result.manifest.units for w in u.warnings]
+    assert not any(w.code == "EXPORT_MINOR_NEWER" for w in result.manifest.warnings)
     (unit,) = result.manifest.units
     assert unit.status == "written"
     summary = canonical_summary(result.files[0])

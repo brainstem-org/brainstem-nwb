@@ -28,7 +28,7 @@ None of these files contain measured data. Converting raw data with NeuroConv is
 
 ## Older exports (format 2.0)
 
-Export format 2.1 includes the catalog records the files need. Exports in format 2.0 reference them by id only, so the files written from them lack the following. Each gap is listed in the manifest as `not_exported`.
+Export formats 2.1 and later include the catalog records the files need. Exports in format 2.0 reference them by id only, so the files written from them lack the following. Each gap is listed in the manifest as `not_exported`.
 
 | Not in a 2.0 export | What is missing in the NWB file |
 |---|---|
