@@ -3,6 +3,7 @@ import copy
 import h5py
 import pytest
 
+from brainstem_nwb import __version__
 from brainstem_nwb.nwb.canonical import canonical_summary, provenance_from_notes
 from brainstem_nwb.nwb.writer import build_nwbfile, write_nwbfile
 from brainstem_nwb.validation import validate_file
@@ -33,7 +34,7 @@ def test_file_contents_match_plan(ephys_file):
         "description": plan.electrode_groups[0].description, "location": "CA1", "device": "Probe A"}
     assert [(e["start_time"], e["stop_time"], e["tags"]) for e in summary["epochs"]] == [
         (0.0, 1800.0, ["exploration"]), (1800.0, 5400.5, ["sleep"])]
-    assert summary["was_generated_by"] == [["brainstem-nwb", "0.1.0"]]
+    assert summary["was_generated_by"] == [["brainstem-nwb", __version__]]
 
 
 def test_metadata_only_files_hold_no_data(ephys_file):

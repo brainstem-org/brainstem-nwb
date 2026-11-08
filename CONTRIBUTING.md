@@ -51,12 +51,15 @@ See [docs/design/architecture.md](docs/design/architecture.md). In short:
 
 brainstem-nwb reads the data model from the server at run time (`store/datamodel.py`), so nothing is regenerated. When www.brainstem.org gains a field, `tests/test_spec.py` fails and lists it: map it, mark it `STRUCTURAL`, or add it to `MANIFEST_ONLY` with a reason. A new record type in the export goes into `EXPORT_LABELS` in `store/datamodel.py`. When the server's data model generation changes (`brainstem-nwb data-model` shows it), review the mappings and update `SUPPORTED_DATA_MODELS` in `_version.py`.
 
-The contract exports (`tests/fixtures/exports/server_contract_2_1*.json`) are written by the server's own export builder. Regenerating them needs a BrainSTEM server checkout, so it is a maintainer task; it uses a throwaway database:
+The contract exports (`tests/fixtures/exports/server_contract_<version>*.json`) are written by the server's own export builder, one pair per export format the tests cover (2.1 and 2.2). Regenerating them needs a BrainSTEM server checkout, so it is a maintainer task; it uses a throwaway database. For the format the server writes now:
 
 ```bash
 /path/to/brainstem/.venv/bin/python scripts/make_contract_export.py /path/to/brainstem \
-    tests/fixtures/exports/server_contract_2_1.json
+    tests/fixtures/exports/server_contract_2_2.json \
+    --session-output tests/fixtures/exports/server_contract_2_2_session.json
 ```
+
+When the server's export format changes, add a pair for the new version, add it to `VERSIONS` in `tests/test_contract.py`, and raise `KNOWN_EXPORT_MINOR` in `_version.py` for a new minor version.
 
 ## Test fixtures
 

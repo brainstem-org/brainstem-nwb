@@ -186,7 +186,7 @@ class TestWithRealClient:
         return calls
 
     def test_session_export(self, client, monkeypatch, tmp_path):
-        payload = json.loads((EXPORTS / "server_contract_2_1_session.json").read_text())
+        payload = json.loads((EXPORTS / "server_contract_2_2_session.json").read_text())
         session_id = payload["export_info"]["session_id"]
         calls = self.respond(monkeypatch, payload)
         export = api.fetch_export(session_id=session_id, client=client, background=False)
@@ -194,7 +194,7 @@ class TestWithRealClient:
         assert export.scope == "session" and export.source.kind == "api"
 
     def test_project_export(self, client, monkeypatch):
-        payload = json.loads((EXPORTS / "server_contract_2_1.json").read_text())
+        payload = json.loads((EXPORTS / "server_contract_2_2.json").read_text())
         project_id = payload["export_info"]["project_id"]
         calls = self.respond(monkeypatch, payload)
         export = api.fetch_export(project_id, client=client, background=False)
